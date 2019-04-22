@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-4.0.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util-3.0.xsd
+           http://www.springframework.org/schema/tx
+           http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+
+    <!-- 自动将Service层注入-->
+    <context:component-scan base-package="cn.lnu" use-default-filters="true">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!--自动将dao层注入-->
+    <context:component-scan base-package="cn.lnu.dao"/>
+
+    <context:component-scan base-package="cn.lnu.util"/>
+
+    <!--读取邮件配置文件-->
+    <context:property-placeholder location="classpath:config/mail.properties"
+                                  ignore-unresolvable="true"/>
+
+    <!--读取jdbc配置文件-->
+    <!--不添加ignore-unresolvable="true"属性，后边redis配置文件无法正常读取-->
+    <context:property-placeholder location="classpath:config/prd/jdbc.properties"
+                                  ignore-unresolvable="true"/>
+
+    <context:property-placeholder location="classpath:config/fdfs_client.properties"
+                                  ignore-unresolvable="true"/>
+
+    <bean id="redisCache" class="cn.lnu.util.redis.RedisCache"></bean>
+
+    <!--读取redis配置文件-->
+    <context:property-placeholder location="classpath:config/prd/redis.properties"/>
+
+    <bean id="prop" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath:config/prd/redis.properties</value>
+            </list>
+        </property>
+        <property name="fileEncoding" value="UTF-8"/>
+    </bean>
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+       <property name="properties" ref="prop"></property>
+    </bean>
+
+    <!-- Redis和缓存配置开始 -->
+    <!-- jedis数据源 -->
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig" >
+        <property name="maxIdle" value="${redis.maxIdle}" />
+        <property name="maxWaitMillis" value="${redis.maxWaitMillis}" />
+        <property name="testOnBorrow" value="${redis.testOnBorrow}" />
+    </bean>
+
+    <!-- redis连接池 -->
+    <bean id="jedisPool" class="redis.clients.jedis.JedisPool" destroy-method="close">
+        <constructor-arg name="poolConfig" ref="poolConfig"/>
+        <constructor-arg name="host" value="${redis.host}"/>
+        <!--<constructor-arg name="password" value="123456"/>-->
+        <constructor-arg name="port" value="${redis.port}"/>
+    </bean>
+
+    <!-- spring提供的连接工厂 -->
+    <bean id="connectionFactory"  class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" >
+        <property name="hostName" value="${redis.host}" />
+        <property name="port" value="${redis.port}" />
+        <property name="password" value="${redis.password}" />
+        <property name="timeout" value="${redis.timeout}" />
+        <property name="poolConfig" ref="poolConfig" />
+    </bean >
+
+    <!--使用字符串进行序列化-->
+    <bean id="stringRedisSerializer"
+            class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+    <!--使用JDK的序列化器进行转化-->
+    <bean id="jdkSerializationRedisSerializer"
+            class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer" />
+
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate" >
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="keySerializer" ref="stringRedisSerializer" />
+        <property name="valueSerializer" ref="jdkSerializationRedisSerializer" />
+    </bean>
+
+    <!-- cache配置 -->
+    <bean id="getCache" class="cn.lnu.util.redis.cache.GetCacheAOP" >
+        <property name="redisTemplate" ref="redisTemplate" />
+    </bean>
+
+    <!-- Redis和缓存配置结束 -->
+
+    <!--配置数据源-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+            destroy-method="close">
+        <!--数据库驱动-->
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <!--连接数据库的url-->
+        <property name="url" value="${jdbc.url}"/>
+        <!--连接数据库的用户名-->
+        <property name="username" value="${jdbc.username}"/>
+        <!--连接数据库的密码-->
+        <property name="password" value="${jdbc.password}"/>
+        <!--初始化连接数-->
+        <property name="initialSize" value="${jdbc.initialSize}"/>
+        <!--最大连接数-->
+        <property name="maxActive" value="${jdbc.maxActive}"/>
+        <!--最大空闲数-->
+        <property name="maxIdle" value="${jdbc.maxIdle}"/>
+        <!--最小空闲数-->
+        <property name="minIdle" value="${jdbc.minIdle}"/>
+        <!--定义最长等待时间-->
+        <property name="maxWait" value="${jdbc.maxWait}"/>
+    </bean>
+
+    <!--使用jdbcTemplate连接数据源-->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <!-- 配置sqlSessionFactory （Spring和Mybatis整合） -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <!--扫描mappers.xml文件-->
+        <property name="mapperLocations" value="classpath:mappers/*/*.xml"/>
+        <!--指定mybatis的配置文件-->
+        <property name="configLocation" value="classpath:config/mybatis-config.xml"/>
+    </bean>
+
+    <!-- spring与mybatis整合配置，扫描所有dao和所有mapper文件 -->
+    <!--DAO接口所在包名，Spring会自动查找其下的类-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="cn.lnu.dao"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    </bean>
+
+    <!--事物管理-->
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--控制住数据源-->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+
+    <aop:config>
+        <!--切入点表达式-->
+        <aop:pointcut id="pc" expression="execution(public * cn.lnu.service.*.*(..))"/>
+        <!--把事务控制在Service层-->
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="pc"/>
+    </aop:config>
+
+    <!--配置事物增强，事物如何切入-->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <!-- 写操作 -->
+            <tx:method name="insert*" propagation="REQUIRED" isolation="DEFAULT"/>
+            <tx:method name="update*" propagation="REQUIRED" isolation="DEFAULT"/>
+            <tx:method name="delete*" propagation="REQUIRED" isolation="DEFAULT"/>
+            <tx:method name="batch*" propagation="REQUIRED" isolation="DEFAULT"/>
+
+            <!-- 读操作 -->
+            <tx:method name="load*" propagation="REQUIRED" isolation="DEFAULT" read-only="true"/>
+            <!--以get开始的所有方法-->
+            <tx:method name="get*" propagation="REQUIRED" isolation="DEFAULT" read-only="true"/>
+            <tx:method name="find*" propagation="REQUIRED" isolation="DEFAULT" read-only="true"/>
+
+            <!--所有方法都是事物方法-->
+            <tx:method name="*" propagation="REQUIRED" isolation="DEFAULT"/>
+        </tx:attributes>
+    </tx:advice>
+
+
+</beans>
