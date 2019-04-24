@@ -1,15 +1,15 @@
-package cn.lnu.service;
+package cn.lnu.dao.user;
 
 import cn.lnu.entity.TbUser;
 
 import java.util.List;
 
 /**
- * @Author
- * @Date 2019/4/22
+ * 用户操作
+ * @Author ccl
+ * @Date 2019/4/24
  */
-public interface UserService {
-
+public interface   TbUserDao {
     public List<TbUser> findAllTbUsers();
 
 

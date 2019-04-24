@@ -1,7 +1,5 @@
 package cn.lnu.dao.data;
 
-import cn.lnu.entity.User;
-
 import java.util.List;
 
 /**
@@ -10,7 +8,6 @@ import java.util.List;
  * @Date 2019/4/22
  */
 public interface DataDao {
-    public List<User> findAllUser();
 
 
 

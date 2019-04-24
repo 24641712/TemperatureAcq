@@ -2,16 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="cn.lnu.dao.user.UserDao">
+<mapper namespace="cn.lnu.dao.user.TbUserDao">
 
-  <resultMap id="UserResult" type="User">
+  <resultMap id="TbUserResult" type="TbUser">
+    <result property="Uid" column="uid"/>
     <result property="username" column="username"/>
-    <result property="password" column="password"/>
+    <result property="email" column="email"/>
+    <result property="created" column="created"/>
   </resultMap>
 
   <!--查找所有用户-->
-  <select id="findAllUsers" resultMap="UserResult">
-      select * from user;
+  <select id="findAllTbUsers" resultMap="TbUserResult">
+      select * from tb_user;
   </select>
 
   <!--&lt;!&ndash;添加用户数据&ndash;&gt;-->

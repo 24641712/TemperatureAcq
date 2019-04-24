@@ -1,7 +1,7 @@
 package cn.lnu.serviceimpl;
 
-import cn.lnu.dao.user.UserDao;
-import cn.lnu.entity.User;
+import cn.lnu.dao.user.TbUserDao;
+import cn.lnu.entity.TbUser;
 import cn.lnu.service.UserService;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +15,9 @@ import java.util.List;
 @Service("userService")
 public class UserServiceImpl implements UserService {
     @Resource
-    private UserDao userDao;
+    private TbUserDao tbUserDao;
 
-
-    public List<User> findAllUser() {
-        return userDao.findAllUsers();
+    public List<TbUser> findAllTbUsers() {
+        return tbUserDao.findAllTbUsers();
     }
 }

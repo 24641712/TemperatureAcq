@@ -1,4 +1,4 @@
-import cn.lnu.entity.User;
+import cn.lnu.entity.TbUser;
 import cn.lnu.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,10 +20,10 @@ public class UserControllerTest {
     private UserService userService;
 
     @Test
-    public void getFindAllUsers(){
-        List<User> users = userService.findAllUser();
-        for(User user:users){
-            System.out.println(user.toString());
+    public void getFindAllTbUsers(){
+        List<TbUser> tbUsers = userService.findAllTbUsers();
+        for(TbUser tbUser:tbUsers){
+            System.out.println(tbUser.toString());
         }
     }
 
