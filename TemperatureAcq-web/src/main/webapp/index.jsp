@@ -321,7 +321,8 @@
         <hr>
         <!-- Sidebar Navidation Menus-->
         <ul class="list-unstyled">
-            <li class="active"> <a href="index.html"><i class="icon-home"></i>首页</a></li>
+            <li class="active"> <a href="${ctx}/facility/shouye.do" target="menuFrame" id="shouye">
+                <i class="icon-home"></i>首页</a></li>
 
             <li><a href="#apps" aria-expanded="false" data-toggle="collapse">
                 <i class="icon-interface-windows"></i>应用 </a>
@@ -332,7 +333,7 @@
                     <li><a href="invoice.html">Invoice</a></li>
                 </ul>
             </li>
-            <li> <a href="chart.html"> <i class="fa fa-bar-chart"></i>图表 </a></li>
+            <li> <a href="${ctx}/facility/stat.do" target="menuFrame"> <i class="fa fa-bar-chart"></i>温度统计 </a></li>
 
             <li><a href="#forms" aria-expanded="false" data-toggle="collapse">
                 <i class="fa fa-building-o"></i>管理 </a>
@@ -341,27 +342,11 @@
                     <li><a href="${ctx}/user/Facilities.do" target="menuFrame">管理设备</a></li>
                 </ul>
             </li>
-            <li> <a href="maps.html"> <i class="fa fa-map-o"></i>Maps </a></li>
-            <li><a href="#pages" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-file-o"></i>Pages </a>
-                <ul id="pages" class="collapse list-unstyled">
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="empty.html">Empty</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="login.html">Log In</a></li>
-                    <li><a href="register.html">Register</a></li>
-                    <li><a href="search-result.html">Search Result</a></li>
-                    <li><a href="404.html">404</a></li>
-                </ul>
-            </li>
-            <li> <a href="tables.html"> <i class="icon-grid"></i>Tables </a></li>
-            <li><a href="#elements" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-globe"></i>UI Elements </a>
-                <ul id="elements" class="collapse list-unstyled">
-                    <li><a href="ui-buttons.html">Buttons</a></li>
-                    <li><a href="ui-cards.html">Cards</a></li>
-                    <li><a href="ui-progressbars.html">Progress Bar</a></li>
-                    <li><a href="ui-timeline.html">Timeline</a></li>
-                </ul>
-            </li>
+
+            <li> <a href="${ctx}/facility/chart.do" target="menuFrame"> <i class="fa fa-map-o"></i>曲线图 </a></li>
+
+            <li> <a href="${ctx}/facility/manage.do" target="menuFrame"> <i class="icon-grid"></i>数据管理 </a></li>
+
         </ul><span class="heading">Extras</span>
         <ul class="list-unstyled">
             <li> <a href="#"> <i class="icon-picture"></i>Demo </a></li>
@@ -393,6 +378,11 @@
 <script src="${ctx}/static/js/front.js"></script>
 <!--Core Javascript -->
 <script src="${ctx}/static/js/mychart.js"></script>
+<script type="text/javascript">
+    window.onload=function(){
+        document.getElementById("shouye").click();
+    }
+</script>
 </body>
 
 </html>

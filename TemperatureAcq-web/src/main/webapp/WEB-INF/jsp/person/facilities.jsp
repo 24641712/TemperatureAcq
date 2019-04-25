@@ -30,8 +30,8 @@
 <!--====================================================
                         PAGE CONTENT
 ======================================================-->
-<div>
-    <input type="text" value="查询关键字"/>
+<div style="margin-left: 20px;">
+    <input type="text" value="Handler"/>
     <button>查询</button>
     <button>添加新设备</button>
 </div>
