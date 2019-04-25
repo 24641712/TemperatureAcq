@@ -33,7 +33,7 @@
 <div>
     <input type="text" value="查询关键字"/>
     <button>查询</button>
-    <button>添加新用户</button>
+    <button>添加新设备</button>
 </div>
 <div class="page-content d-flex align-items-stretch">
 
