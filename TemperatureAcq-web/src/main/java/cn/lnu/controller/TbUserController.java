@@ -1,6 +1,7 @@
 package cn.lnu.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -29,6 +30,22 @@ public class TbUserController {
         System.out.println("后台");
         return "redirect:/index.jsp";
     }
+
+    @RequestMapping("/TbUsers")
+    public ModelAndView getAddTbUsers(){
+        ModelAndView model = new ModelAndView();
+        model.setViewName("/person/TbUsers");
+        return model;
+    }
+
+    @RequestMapping("/Facilities")
+    public ModelAndView getFacilities(){
+        ModelAndView model = new ModelAndView();
+        model.setViewName("/person/facilities");
+        return model;
+    }
+
+
 
 
 
