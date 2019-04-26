@@ -48,6 +48,20 @@ public class TbFacilityController {
         return model;
     }
 
+    @RequestMapping("calendar")
+    public ModelAndView getCalendar(){
+        ModelAndView model = new ModelAndView();
+        model.setViewName("/data/calendar");
+        return model;
+    }
+
+    @RequestMapping("email")
+    public ModelAndView getEmail(){
+        ModelAndView model = new ModelAndView();
+        model.setViewName("/data/email");
+        return model;
+    }
+
 
 
 

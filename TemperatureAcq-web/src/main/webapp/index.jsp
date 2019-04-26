@@ -39,7 +39,7 @@
         <div class="container-fluid ">
             <div class="navbar-holder d-flex align-items-center justify-content-between">
                 <div class="navbar-header">
-                    <a href="index.html" class="navbar-brand">
+                    <a href="${ctx}/user/login.do" class="navbar-brand">
                         <div class="brand-text brand-big hidden-lg-down">
                             <img src="${ctx}/static/img/logo-white.png" alt="Logo" class="img-fluid">
                         </div>
@@ -157,7 +157,7 @@
                             <hr>
                         </li>
                         <li>
-                            <a rel="nofollow" href="profile.html" class="dropdown-item">
+                            <a rel="nofollow" href="#" class="dropdown-item">
                                 <div class="notification">
                                     <div class="notification-content">
                                         <i class="fa fa-user "></i>
@@ -167,7 +167,7 @@
                             </a>
                         </li>
                         <li>
-                            <a rel="nofollow" href="profile.html" class="dropdown-item">
+                            <a rel="nofollow" href="#" class="dropdown-item">
                                 <div class="notification">
                                     <div class="notification-content">
                                         <i class="fa fa-envelope-o"></i>
@@ -177,7 +177,7 @@
                             </a>
                         </li>
                         <li>
-                            <a rel="nofollow" href="profile.html" class="dropdown-item">
+                            <a rel="nofollow" href="#" class="dropdown-item">
                                 <div class="notification">
                                     <div class="notification-content">
                                         <i class="fa fa-cog"></i>
@@ -327,10 +327,10 @@
             <li><a href="#apps" aria-expanded="false" data-toggle="collapse">
                 <i class="icon-interface-windows"></i>应用 </a>
                 <ul id="apps" class="collapse list-unstyled">
-                    <li><a href="calendar.html">日历</a></li>
-                    <li><a href="email.html">邮箱</a></li>
-                    <li><a href="media.html">Media</a></li>
-                    <li><a href="invoice.html">Invoice</a></li>
+                    <li><a href="${ctx}/facility/calendar.do" target="menuFrame">日历</a></li>
+                    <li><a href="${ctx}/facility/email.do" target="menuFrame">邮箱</a></li>
+                    <li><a href="#">Media</a></li>
+                    <li><a href="#">Invoice</a></li>
                 </ul>
             </li>
             <li> <a href="${ctx}/facility/stat.do" target="menuFrame"> <i class="fa fa-bar-chart"></i>温度统计 </a></li>
@@ -359,8 +359,8 @@
                     style="overflow: visible;margin-left: -30px" scrolling="yes" frameborder="no"
                     height="760px" width="100%"></iframe>
         </div>
-
-            More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
+           @该系统最终解释权归本人所有，
+           获取源码可以<a href="https://github.com/24641712/TemperatureAcq" target="_blank">点击</a>这里
 
         </div>
 

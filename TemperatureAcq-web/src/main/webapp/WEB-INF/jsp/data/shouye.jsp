@@ -12,7 +12,7 @@
     <meta name="robots" content="all,follow">
 
     <title>Bootstrap Admin Template </title>
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="${ctx}/static/img/favicon.ico">
 
     <!-- global stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
@@ -27,6 +27,7 @@
 </head>
 
 <body>
+<h2>&nbsp&nbsp&nbsp当前设备温度情况</h2>
 <!--====================================================
                         PAGE CONTENT
 ======================================================-->
@@ -46,7 +47,7 @@
                                 &nbsp;&nbsp;&nbsp;23&#8451;</h2>
                             <span class="text-muted">设备：DZ1S11</span>
                         </div>
-                        <span class="text-success">80%</span>
+                        <span class="text-success">0</span>
                         <div class="progress">
                             <div class="progress-bar bg-success" role="progressbar" style="width: 80%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
@@ -60,10 +61,10 @@
                         <div class="text-left report1-cont">
                             <h2 class="font-light m-b-0">
                                 <i class="ti-arrow-up text-danger"></i>
-                                &nbsp;&nbsp;&nbsp;22&#8451;</h2>
+                                &nbsp;&nbsp;&nbsp;24&#8451;</h2>
                             <span class="text-muted">设备：DZ1S1</span>
                         </div>
-                        <span class="text-danger">43%</span>
+                        <span class="text-danger">+1</span>
                         <div class="progress">
                             <div class="progress-bar bg-danger" role="progressbar" style="width: 43%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
@@ -77,12 +78,12 @@
                         <div class="text-left report1-cont">
                             <h2 class="font-light m-b-0">
                                 <i class="ti-arrow-up text-warning"></i>
-                                &nbsp;&nbsp;&nbsp;24&#8451;</h2>
+                                &nbsp;&nbsp;&nbsp;25&#8451;</h2>
                             <span class="text-muted">设备：DZ1S19 </span>
                         </div>
-                        <span class="text-warning">53%</span>
+                        <span class="text-danger">+2</span>
                         <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 53%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 53%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <p><small>12/13 13:24:34</small></p>
                     </div>
@@ -94,10 +95,10 @@
                         <div class="text-left report1-cont">
                             <h2 class="font-light m-b-0">
                                 <i class="ti-arrow-up text-info"></i>
-                                &nbsp;&nbsp;&nbsp;25&#8451;</h2>
+                                &nbsp;&nbsp;&nbsp;21&#8451;</h2>
                             <span class="text-muted">设备：DZ1S26</span>
                         </div>
-                        <span class="text-info">70%</span>
+                        <span class="text-info">-2</span>
                         <div class="progress">
                             <div class="progress-bar bg-info" role="progressbar" style="width: 70%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>

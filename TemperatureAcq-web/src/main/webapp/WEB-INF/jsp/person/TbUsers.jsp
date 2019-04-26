@@ -13,7 +13,7 @@
     <meta name="robots" content="all,follow">
 
     <title>用户</title>
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="${ctx}/static/img/favicon.ico">
 
     <!-- global stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
