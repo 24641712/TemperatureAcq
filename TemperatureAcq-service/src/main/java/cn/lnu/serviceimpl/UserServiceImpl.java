@@ -20,4 +20,12 @@ public class UserServiceImpl implements UserService {
     public List<TbUser> findAllTbUsers() {
         return tbUserDao.findAllTbUsers();
     }
+
+    public int count() {
+        return tbUserDao.count();
+    }
+
+    public List<TbUser> selectTbUserByPage(int startPos, int pageSize) {
+        return tbUserDao.selectTbUsersByPage(startPos,pageSize);
+    }
 }

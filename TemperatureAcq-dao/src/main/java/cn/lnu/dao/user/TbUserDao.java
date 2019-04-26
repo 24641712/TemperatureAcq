@@ -1,6 +1,7 @@
 package cn.lnu.dao.user;
 
 import cn.lnu.entity.TbUser;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -11,6 +12,11 @@ import java.util.List;
  */
 public interface   TbUserDao {
     public List<TbUser> findAllTbUsers();
+
+    public int count();
+
+    public List<TbUser> selectTbUsersByPage(@Param(value="startPos")Integer startPos,
+                                            @Param(value="pageSize")Integer pageSize);
 
 
 }

@@ -1,11 +1,16 @@
 package cn.lnu.controller.user;
 
+import cn.lnu.entity.TbUser;
+import cn.lnu.service.UserService;
+import cn.lnu.util.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.Resource;
 import javax.jws.WebParam;
+import java.util.List;
 
 /**
  * 用户控制层
@@ -15,6 +20,9 @@ import javax.jws.WebParam;
 @Controller
 @RequestMapping("/user")
 public class TbUserController {
+
+    @Resource
+    private UserService userService;
 
     @RequestMapping("/logout")
     public ModelAndView getLogout(){
@@ -27,13 +35,19 @@ public class TbUserController {
     public String getLogin(){
         ModelAndView model = new ModelAndView();
         model.setViewName("/index");
-        System.out.println("后台");
         return "redirect:/index.jsp";
     }
 
     @RequestMapping("/TbUsers")
     public ModelAndView getAddTbUsers(){
         ModelAndView model = new ModelAndView();
+        int pageNow = 1;
+        int totalcount = userService.count();
+        Page page = new Page(totalcount,pageNow);
+        List<TbUser> tbUsers = userService.selectTbUserByPage(
+                page.getStartPOs(),page.getPageSize());
+        model.addObject("tbUsers",tbUsers);
+        model.addObject("page",page);
         model.setViewName("/person/TbUsers");
         return model;
     }

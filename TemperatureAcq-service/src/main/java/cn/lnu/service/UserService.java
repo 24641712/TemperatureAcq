@@ -12,5 +12,8 @@ public interface UserService {
 
     public List<TbUser> findAllTbUsers();
 
+    public int count();
+
+    public List<TbUser> selectTbUserByPage(int startPos,int pageSize);
 
 }

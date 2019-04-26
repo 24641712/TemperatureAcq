@@ -13,8 +13,23 @@
 
   <!--查找所有用户-->
   <select id="findAllTbUsers" resultMap="TbUserResult">
-      select * from tb_user;
+      select *
+      from tb_user;
   </select>
+
+  <!--查询数据总ti条数-->
+  <select id="count" resultType="Integer">
+    select count(*) as count1
+    from tb_user;
+  </select>
+
+  <!--分页查询数据-->
+  <select id="selectTbUsersByPage" resultMap="TbUserResult">
+    select *
+    from tb_user
+    limit #{startPos},#{pageSize};
+  </select>
+
 
   <!--&lt;!&ndash;添加用户数据&ndash;&gt;-->
   <!--<insert id="addUser" parameterType="User">-->
