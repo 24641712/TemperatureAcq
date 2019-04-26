@@ -7,21 +7,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79cc8961-c2c1-4989-b95b-07816d3065e4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/calendar.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/email.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/src/main/java/cn/lnu/controller/data/TbFacilityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/main/java/cn/lnu/controller/data/TbFacilityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/chart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/chart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/datamanage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/datamanage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/shouye.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/shouye.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/temp_stat.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/temp_stat.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/person/TbUsers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/person/TbUsers.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/person/facilities.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/person/facilities.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/target/TemperatureAcq-web.war" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/target/TemperatureAcq-web.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/target/TemperatureAcq-web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/target/TemperatureAcq-web/index.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="79cc8961-c2c1-4989-b95b-07816d3065e4" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/TemperatureAcq-web/target/" />
     <ignored path="$PROJECT_DIR$/TemperatureAcq-dao/target/" />
@@ -40,11 +26,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1300">
-              <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+            <state relative-caret-position="-8414">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="57" column="26" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -167,7 +162,6 @@
         <option value="$PROJECT_DIR$/TemperatureAcq-service/src/main/java/cn/lnu/serviceimpl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/TemperatureAcq-dao/src/main/java/cn/lnu/dao/data/DataDao.java" />
         <option value="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/person/login.jsp" />
-        <option value="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/person/TbUser.jsp" />
         <option value="$PROJECT_DIR$/TemperatureAcq-web/src/main/java/cn/lnu/controller/TbUserController.java" />
         <option value="$PROJECT_DIR$/TemperatureAcq-entity/src/main/java/cn/lnu/entity/TbFacility.java" />
@@ -187,6 +181,7 @@
         <option value="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/email.jsp" />
         <option value="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/shouye.jsp" />
         <option value="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/web.xml" />
       </list>
     </option>
   </component>
@@ -217,10 +212,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="930" />
-    <option name="height" value="690" />
+    <option name="x" value="1" />
+    <option name="width" value="1385" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -240,188 +234,6 @@
             <path>
               <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
               <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mappers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mappers" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mappers" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-entity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-entity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-entity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-entity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lnu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lnu" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lnu" type="462c0819:PsiDirectoryNode" />
-              <item name="serviceimpl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
               <item name="TemperatureAcq-web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -436,33 +248,6 @@
               <item name="TemperatureAcq-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
@@ -471,62 +256,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
-              <item name="person" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TemperatureAcq" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TemperatureAcq" type="462c0819:PsiDirectoryNode" />
-              <item name="TemperatureAcq-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -775,7 +504,7 @@
       <workItem from="1556178544884" duration="16956000" />
       <workItem from="1556238401266" duration="1155000" />
       <workItem from="1556257617090" duration="4060000" />
-      <workItem from="1556262163588" duration="292000" />
+      <workItem from="1556262163588" duration="1844000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目">
       <created>1555933080696</created>
@@ -847,7 +576,21 @@
       <option name="project" value="LOCAL" />
       <updated>1556200954672</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="完成曲线图、首页、用户和邮箱的前端工作。">
+      <created>1556262613326</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1556262613326</updated>
+    </task>
+    <task id="LOCAL-00012" summary="设置首页为用户登录页">
+      <created>1556264963072</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1556264963072</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -883,7 +626,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43324000" />
+    <option name="totallyTimeSpent" value="44876000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -906,11 +649,11 @@
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32954547" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="13" sideWeight="0.49848714" visible="true" weight="0.7353896" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.35714287" />
+      <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49848714" visible="true" weight="0.18668832" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.42045453" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32954547" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32954547" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15506808" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21785174" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" side_tool="true" />
@@ -972,7 +715,9 @@
     <MESSAGE value="添加用户页面和设备页面" />
     <MESSAGE value="单元测试查询设备信息" />
     <MESSAGE value="完成所有的界面工作" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成所有的界面工作" />
+    <MESSAGE value="完成曲线图、首页、用户和邮箱的前端工作。" />
+    <MESSAGE value="设置首页为用户登录页" />
+    <option name="LAST_COMMIT_MESSAGE" value="设置首页为用户登录页" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/TemperatureAcq-web/src/test/java/UserControllerTest.java">
@@ -1080,13 +825,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1288,8 +1026,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1300">
-          <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+        <state relative-caret-position="-8414">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="57" column="26" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
         </state>
       </provider>
     </entry>
