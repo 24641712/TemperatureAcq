@@ -1,6 +1,7 @@
 package cn.lnu.dao.data;
 
 import cn.lnu.entity.TbFacility;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -11,6 +12,12 @@ import java.util.List;
  */
 public interface TbFacilityDao {
     public List<TbFacility> findAllTbFacilities();
+
+    public int count();
+
+    public List<TbFacility> selectTbFacilityByPage(
+            @Param(value = "startPos") Integer startPos,
+            @Param(value = "pageSize") Integer pageSize);
 
 
 

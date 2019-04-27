@@ -41,7 +41,7 @@
 
         <!--***** CONTENT *****-->
         <div class="row">
-            <table class="table table-hover">
+            <table class="table table-hover" id="table1">
                 <thead>
                 <tr class="bg-info text-white">
                     <th>序号</th>
@@ -54,116 +54,51 @@
                 </tr>
                 </thead>
                 <tbody>
+                <c:forEach items="${tbFacilities}" var="tbFacility">
                 <tr>
-                    <th scope="row">1</th>
-                    <td>DZ1S11</td>
-                    <td>192.168.1.1</td>
-                    <td>20&#8451;~22&#8451;</td>
+                    <th scope="row">${tbFacility.fid}</th>
+                    <td>${tbFacility.handler}</td>
+                    <td>${tbFacility.ip}</td>
+                    <td>${tbFacility.min_temp}&#8451;~${tbFacility.max_temp}&#8451;</td>
                     <td>12/13 13:24:34</td>
                     <td><a href="#">编辑</a></td>
                     <td><a href="#">查看详情</a></td>
                 </tr>
-                <tr class="table-warning">
-                    <th scope="row">2</th>
-                    <td>DZ1S11</td>
-                    <td>192.168.1.1</td>
-                    <td>20&#8451;~22&#8451;</td>
-                    <td>12/13 13:24:34</td>
-                    <td><a href="#">编辑</a></td>
-                    <td><a href="#">查看详情</a></td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>DZ1S11</td>
-                    <td>192.168.1.1</td>
-                    <td>20&#8451;~22&#8451;</td>
-                    <td>12/13 13:24:34</td>
-                    <td><a href="#">编辑</a></td>
-                    <td><a href="#">查看详情</a></td>
-                </tr>
-                <tr class="table-success">
-                    <th scope="row">3</th>
-                    <td>DZ1S11</td>
-                    <td>192.168.1.1</td>
-                    <td>20&#8451;~22&#8451;</td>
-                    <td>12/13 13:24:34</td>
-                    <td><a href="#">编辑</a></td>
-                    <td><a href="#">查看详情</a></td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>DZ1S11</td>
-                    <td>192.168.1.1</td>
-                    <td>20&#8451;~22&#8451;</td>
-                    <td>12/13 13:24:34</td>
-                    <td><a href="#">编辑</a></td>
-                    <td><a href="#">查看详情</a></td>
-                </tr>
-                <tr class="table-danger">
-                    <th scope="row">5</th>
-                    <td>DZ1S11</td>
-                    <td>192.168.1.1</td>
-                    <td>20&#8451;~22&#8451;</td>
-                    <td>12/13 13:24:34</td>
-                    <td><a href="#">编辑</a></td>
-                    <td><a href="#">查看详情</a></td>
-                </tr>
-                <tr>
-                    <th scope="row">6</th>
-                    <td>DZ1S11</td>
-                    <td>192.168.1.1</td>
-                    <td>20&#8451;~22&#8451;</td>
-                    <td>12/13 13:24:34</td>
-                    <td><a href="#">编辑</a></td>
-                    <td><a href="#">查看详情</a></td>
-                </tr>
-                <tr class="table-info">
-                    <th scope="row">7</th>
-                    <td>DZ1S11</td>
-                    <td>192.168.1.1</td>
-                    <td>20&#8451;~22&#8451;</td>
-                    <td>12/13 13:24:34</td>
-                    <td><a href="#">编辑</a></td>
-                    <td><a href="#">查看详情</a></td>
-                </tr>
-                <tr>
-                    <th scope="row">8</th>
-                    <td>DZ1S11</td>
-                    <td>192.168.1.1</td>
-                    <td>20&#8451;~22&#8451;</td>
-                    <td>12/13 13:24:34</td>
-                    <td><a href="#">编辑</a></td>
-                    <td><a href="#">查看详情</a></td>
-                </tr>
-                <tr class="table-warning">
-                    <th scope="row">9</th>
-                    <td>DZ1S11</td>
-                    <td>192.168.1.1</td>
-                    <td>20&#8451;~22&#8451;</td>
-                    <td>12/13 13:24:34</td>
-                    <td><a href="#">编辑</a></td>
-                    <td><a href="#">查看详情</a></td>
-                </tr>
-                <tr>
-                    <th scope="row">10</th>
-                    <td>DZ1S11</td>
-                    <td>192.168.1.1</td>
-                    <td>20&#8451;~22&#8451;</td>
-                    <td>12/13 13:24:34</td>
-                    <td><a href="#">编辑</a></td>
-                    <td><a href="#">查看详情</a></td>
-                </tr>
-                <tr class="table-success">
-                    <th scope="row">11</th>
-                    <td>DZ1S11</td>
-                    <td>192.168.1.1</td>
-                    <td>20&#8451;~22&#8451;</td>
-                    <td>12/13 13:24:34</td>
-                    <td><a href="#">编辑</a></td>
-                    <td><a href="#">查看详情</a></td>
-                </tr>
+                </c:forEach>
                 </tbody>
             </table>
+            <div align="center">
+                <font size="2">共${page.totalPageCount}页</font>
+                <font size="2">第${page.pageNow}页</font>
+                <a href="${ctx}/user/Facilities.do?pageNow=1">首页</a>
+                <c:choose>
+                    <c:when test="${page.pageNow-1 > 0}">
+                        <a href="${ctx}/user/Facilities.do?pageNow=${page.pageNow-1}">上一页</a>
+                    </c:when>
+                    <c:when test="${page.pageNow-1 <= 0}">
+                        <a href="${ctx}/user/Facilities.do?pageNow=1">上一页</a>
+                    </c:when>
+                </c:choose>
+                <c:choose>
+                    <c:when test="${page.totalPageCount == 0}">
+                        <a href="${ctx}/user/Facilities.do?pageNow=${page.pageNow}">下一页</a>
+                    </c:when>
+                    <c:when test="${page.pageNow+1 < page.totalPageCount}">
+                        <a href="${ctx}/user/Facilities.do?pageNow=${page.pageNow+1}">下一页</a>
+                    </c:when>
+                    <c:when test="${page.pageNow+1 >= page.totalPageCount}">
+                        <a href="${ctx}/user/Facilities.do?pageNow=${page.totalPageCount}">下一页</a>
+                    </c:when>
+                </c:choose>
+                <c:choose>
+                    <c:when test="${page.totalPageCount==0}">
+                        <a href="${ctx}/user/Facilities.do?pageNow=${page.pageNow}">尾页</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a href="${ctx}/user/Facilities.do?pageNow=${page.totalPageCount}">尾页</a>
+                    </c:otherwise>
+                </c:choose>
+            </div>
         </div>
 
     </div>
@@ -180,32 +115,20 @@
 <script src="${ctx}/static/js/front.js"></script>
 
 <!--Core Javascript -->
-<script>
-    new Chart(document.getElementById("myChart-nav").getContext('2d'), {
-        type: 'doughnut',
-        data: {
-            labels: ["M", "T", "W", "T", "F", "S", "S"],
-            datasets: [{
-                backgroundColor: [
-                    "#2ecc71",
-                    "#3498db",
-                    "#95a5a6",
-                    "#9b59b6",
-                    "#f1c40f",
-                    "#e74c3c",
-                    "#34495e"
-                ],
-                data: [12, 19, 3, 17, 28, 24, 7]
-            }]
-        },
-        options: {
-            legend: { display: false },
-            title: {
-                display: true,
-                text: ''
+<script type="text/javascript">
+    window.onload = function () {
+        var color = ['table-warning','table-success','table-danger','table-info']
+        var rows=document.getElementById("table1").rows;
+        var index = 0;
+        for(var i=1;i<rows.length;i++){
+            if(i%2==0){
+                rows[i].setAttribute('class',color[index++]);
+            }
+            if(index>=color.length){
+                index = 0;
             }
         }
-    });
+    }
 </script>
 </body>
 

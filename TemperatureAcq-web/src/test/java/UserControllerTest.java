@@ -47,7 +47,7 @@ public class UserControllerTest {
         int totalCount = userService.count();
         int pageNow = 1;
         Page page = new Page(totalCount,pageNow);
-        List<TbUser> tbUsers = userService.selectTbUserByPage(page.getStartPOs(),page.getPageSize());
+        List<TbUser> tbUsers = userService.selectTbUserByPage(page.getStartPos(),page.getPageSize());
         for(TbUser tbUser:tbUsers){
             System.out.println(tbUser.toString());
         }

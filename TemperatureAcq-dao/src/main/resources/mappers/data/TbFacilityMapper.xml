@@ -18,6 +18,20 @@
       select * from tb_facility;
   </select>
 
+  <!--查询设备总数-->
+  <select id="count" resultType="Integer">
+    select count(*) as count1
+    from tb_facility;
+  </select>
+
+  <!--按条件查询指定数据-->
+  <select id="selectTbFacilityByPage" resultMap="TbFacilityResult">
+    select *
+    from tb_facility
+    limit #{startPos},#{pageSize};
+  </select>
+
+
   <!--&lt;!&ndash;添加用户数据&ndash;&gt;-->
   <!--<insert id="addUser" parameterType="User">-->
     <!--insert into users values(#{id},#{username},#{password});-->

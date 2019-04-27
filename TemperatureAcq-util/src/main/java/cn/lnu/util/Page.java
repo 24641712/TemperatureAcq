@@ -12,7 +12,7 @@ public class Page implements Serializable {
     private int pageNow = 1;
 
     //每页显示记录的条数
-    private int pageSize = 21;
+    private int pageSize = 14;
 
     //总的记录条数
     private int totalCount;
@@ -22,7 +22,7 @@ public class Page implements Serializable {
 
     //开始位置，从0开始
     @SuppressWarnings("unused")
-    private int startPOs;
+    private int startPos;
 
     //是否有首页
     @SuppressWarnings("unused")
@@ -93,12 +93,12 @@ public class Page implements Serializable {
      *取得记录的初始位置
      *@return
      **/
-    public int getStartPOs() {
+    public int getStartPos() {
         return (pageNow-1)*pageSize;
     }
 
-    public void setStartPOs(int startPOs) {
-        this.startPOs = startPOs;
+    public void setStartPos(int startPos) {
+        this.startPos = startPos;
     }
 
     /*
@@ -148,4 +148,5 @@ public class Page implements Serializable {
     public void setHasLast(boolean hasLast) {
         this.hasLast = hasLast;
     }
+
 }

@@ -21,4 +21,14 @@ public class TbFacilitiesImpl implements TbFacilityService {
     public List<TbFacility> findAllFacilities() {
         return tbFacilityDao.findAllTbFacilities();
     }
+
+    public int count() {
+        return tbFacilityDao.count();
+    }
+
+    public List<TbFacility> selectTbFacilityByPage(int startPos,int pageSize) {
+        return tbFacilityDao.selectTbFacilityByPage(startPos,pageSize);
+    }
+
+
 }

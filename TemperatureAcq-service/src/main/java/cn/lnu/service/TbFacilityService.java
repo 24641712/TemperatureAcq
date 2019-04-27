@@ -9,7 +9,13 @@ import java.util.List;
  * @Date 2019/4/25
  */
 public interface TbFacilityService {
+
     public List<TbFacility> findAllFacilities();
+
+    public int count();
+
+    public List<TbFacility> selectTbFacilityByPage(int startPos,int pageSize);
+
 
 
 }

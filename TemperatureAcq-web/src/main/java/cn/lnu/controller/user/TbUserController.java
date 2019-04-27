@@ -1,6 +1,8 @@
 package cn.lnu.controller.user;
 
+import cn.lnu.entity.TbFacility;
 import cn.lnu.entity.TbUser;
+import cn.lnu.service.TbFacilityService;
 import cn.lnu.service.UserService;
 import cn.lnu.util.Page;
 import org.springframework.stereotype.Controller;
@@ -10,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.jws.WebParam;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -23,6 +26,9 @@ public class TbUserController {
 
     @Resource
     private UserService userService;
+
+    @Resource
+    private TbFacilityService tbFacilityService;
 
     @RequestMapping("/logout")
     public ModelAndView getLogout(){
@@ -39,13 +45,24 @@ public class TbUserController {
     }
 
     @RequestMapping("/TbUsers")
-    public ModelAndView getAddTbUsers(){
+    public ModelAndView getAddTbUsers(HttpServletRequest request){
         ModelAndView model = new ModelAndView();
-        int pageNow = 1;
+        String pageNow = request.getParameter("pageNow");
         int totalcount = userService.count();
-        Page page = new Page(totalcount,pageNow);
+        Page page = null;
+        if(pageNow!=null){
+            page = new Page(totalcount,Integer.parseInt(pageNow));
+            List<TbUser> tbUsers = userService.selectTbUserByPage(
+                    page.getStartPos(),page.getPageSize());
+        }else{
+            page = new Page(totalcount,1);
+            List<TbUser> tbUsers = userService.selectTbUserByPage(
+                    page.getStartPos(),page.getPageSize());
+        }
+
+
         List<TbUser> tbUsers = userService.selectTbUserByPage(
-                page.getStartPOs(),page.getPageSize());
+                page.getStartPos(),page.getPageSize());
         model.addObject("tbUsers",tbUsers);
         model.addObject("page",page);
         model.setViewName("/person/TbUsers");
@@ -53,8 +70,20 @@ public class TbUserController {
     }
 
     @RequestMapping("/Facilities")
-    public ModelAndView getFacilities(){
+    public ModelAndView getFacilities(HttpServletRequest request){
         ModelAndView model = new ModelAndView();
+        String pageNow = request.getParameter("pageNow");
+        int totalCount = tbFacilityService.count();
+        Page page = null;
+        List<TbFacility> tbFacilities = null;
+        if(pageNow==null){
+            page = new Page(totalCount,1);
+        }else{
+            page = new Page(totalCount,Integer.parseInt(pageNow));
+        }
+        tbFacilities = tbFacilityService.selectTbFacilityByPage(page.getStartPos(),page.getPageSize());
+        model.addObject("tbFacilities",tbFacilities);
+        model.addObject("page",page);
         model.setViewName("/person/facilities");
         return model;
     }
