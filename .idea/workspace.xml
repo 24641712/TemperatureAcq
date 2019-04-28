@@ -8,28 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79cc8961-c2c1-4989-b95b-07816d3065e4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/TemperatureAcq-dao/src/main/resources/mappers/data/DataMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemperatureAcq-entity/src/main/java/cn/lnu/entity/HistoricalData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemperatureAcq-entity/src/main/java/cn/lnu/entity/Temperature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemperatureAcq-service/src/main/java/cn/lnu/service/TemperatureService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemperatureAcq-service/src/main/java/cn/lnu/serviceimpl/TemperatureServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/main/java/cn/lnu/controller/data/DataController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/test/java/TemperatureControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-dao/src/main/java/cn/lnu/dao/data/DataDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-dao/src/main/java/cn/lnu/dao/data/DataDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-entity/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-entity/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-entity/src/main/java/cn/lnu/entity/TbFacility.java" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-entity/src/main/java/cn/lnu/entity/TbFacility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-entity/src/main/java/cn/lnu/entity/TbUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-entity/src/main/java/cn/lnu/entity/TbUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-util/src/main/java/cn/lnu/util/FormatDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-util/src/main/java/cn/lnu/util/FormatDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/src/main/java/cn/lnu/controller/data/TbFacilityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/main/java/cn/lnu/controller/data/TbFacilityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/datamanage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/historydata.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/temp_stat.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/temp_stat.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/person/TbUsers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/person/TbUsers.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/person/facilities.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/person/facilities.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/src/test/java/TbFacilityControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/test/java/TbFacilityControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/src/test/java/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/src/test/java/UserControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/target/TemperatureAcq-web.war" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/target/TemperatureAcq-web.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TemperatureAcq-web/target/TemperatureAcq-web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureAcq-web/target/TemperatureAcq-web/index.jsp" afterDir="false" />
     </list>
@@ -51,11 +30,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="historydata.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="historydata.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/historydata.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="191">
               <caret line="81" column="40" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="temp_stat.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/temp_stat.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="132" column="35" selection-start-line="132" selection-start-column="35" selection-end-line="132" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -131,6 +119,7 @@
     <setting file="file://$PROJECT_DIR$/TemperatureAcq-web/src/test/java/TemperatureControllerTest.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/TemperatureAcq-dao/src/main/resources/mappers/data/DataMapper.xml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TemperatureAcq-service/src/main/java/cn/lnu/service/TemperatureService.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/temp_stat.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/TemperatureAcq-dao/src/main/resources/mappers/user/TbUserMapper.xml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/historydata.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/TemperatureAcq-entity/src/main/java/cn/lnu/entity/HistoricalData.java" root0="SKIP_INSPECTION" />
@@ -848,7 +837,7 @@
       <workItem from="1556257617090" duration="4060000" />
       <workItem from="1556262163588" duration="16308000" />
       <workItem from="1556323737919" duration="17332000" />
-      <workItem from="1556413807570" duration="4632000" />
+      <workItem from="1556413807570" duration="4900000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目">
       <created>1555933080696</created>
@@ -955,7 +944,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556360149548</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="设备温度统计与到处和超温历史数据管理数据展示和分页功能">
+      <created>1556419489544</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1556419489544</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -991,11 +987,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81304000" />
+    <option name="totallyTimeSpent" value="81572000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50226927" side_tool="true" weight="0.3538961" />
@@ -1015,11 +1010,11 @@
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32954547" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49848714" weight="0.17694806" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="13" sideWeight="0.49848714" visible="true" weight="0.71428573" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4977307" weight="0.33766234" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32954547" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32954547" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2193646" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2193646" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" side_tool="true" />
@@ -1111,7 +1106,8 @@
     <MESSAGE value="设置首页为用户登录页" />
     <MESSAGE value="编写分页工具Page" />
     <MESSAGE value="给用户和设备数据添加分页功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="给用户和设备数据添加分页功能" />
+    <MESSAGE value="设备温度统计与到处和超温历史数据管理数据展示和分页功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="设备温度统计与到处和超温历史数据管理数据展示和分页功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1374,13 +1370,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/temp_stat.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-25">
-          <caret line="68" column="48" lean-forward="true" selection-start-line="68" selection-start-column="48" selection-end-line="68" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TemperatureAcq-entity/src/main/java/cn/lnu/entity/Temperature.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
@@ -1501,6 +1490,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="81" column="40" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/temp_stat.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="132" column="35" selection-start-line="132" selection-start-column="35" selection-end-line="132" selection-end-column="35" />
         </state>
       </provider>
     </entry>
