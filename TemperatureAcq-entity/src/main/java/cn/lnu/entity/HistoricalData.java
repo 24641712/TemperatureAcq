@@ -76,7 +76,7 @@ public class HistoricalData {
         this.temp = temp;
     }
 
-    public int getExceed() {
+    public String getExceed() {
         if(temp>=min_temp&&temp<=max_temp){
             this.exceed = 0;
         }else if(temp<min_temp){
@@ -84,7 +84,12 @@ public class HistoricalData {
         }else{
             this.exceed = temp - max_temp;
         }
-        return exceed;
+        if(this.exceed>0){
+            return "+"+this.exceed;
+        }else{
+            return ""+exceed;
+        }
+
     }
 
     public void setExceed(int exceed) {

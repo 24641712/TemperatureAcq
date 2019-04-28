@@ -24,352 +24,104 @@
 </head>
 
 <body>
-
+<div align="left" style="margin-left: 30px">
+    <select>
+        <option>所有设备</option>
+        <option>DZ1S11</option>
+        <option>DZ1S1</option>
+        <option>DZ1S19</option>
+        <option>DZ1S26</option>
+    </select>
+    <input id="start" type="date" value="2019-08-13"/>
+    &nbsp;至&nbsp;
+    <input id="end" type="date" value="2019-09-13"/>
+    <button type="button">查询</button>
+</div>
 <!--====================================================
                         PAGE CONTENT
 ======================================================-->
 <div class="page-content d-flex align-items-stretch">
-
     <div class="content-inner chart-cont">
+        <div id="main" style="height:400px;"></div>
+        <script type="text/javascript">
+            window.onload=function (ev) {
+                var myChart = echarts.init(document.getElementById('main'), 'macarons');
 
-        <!--***** CHART *****-->
-        <div class="row">
-            <div class="col-md-6 mt-2">
-                <div class="card">
-                    <div class="dropdown pull-right menu-sett-card" >
-                        <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v men"></i>
-                        </a>
-                        <ul aria-labelledby="notifications" class="dropdown-menu">
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Edit</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">FAQ</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Support</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-block">
-                        <canvas id="bar-chart" width="400" height="400"></canvas>
-                    </div>
-                </div>
-            </div>
+                option = {
+                    title: {
+                        text: '当前时间段温度变化',
+                        subtext: '纯属虚构'
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data: ['最高气温', '最低气温']
+                    },
+                    toolbox: {
+                        show: true,
+                        feature: {
+                            mark: {show: true},
+                            dataView: {show: true, readOnly: false},
+                            magicType: {show: true, type: ['line', 'bar']},
+                            restore: {show: true},
+                            saveAsImage: {show: true}
+                        }
+                    },
+                    calculable: true,
+                    xAxis: [
+                        {
+                            type: 'category',
+                            boundaryGap: false,
+                            data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日','周','周']
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            axisLabel: {
+                                formatter: '{value} °C'
+                            }
+                        }
+                    ],
+                    series: [
+                        {
+                            name: '最高气温',
+                            type: 'line',
+                            data: [11,9,10, 11, 15, 13, 12, 13, 10],
+                            markPoint: {
+                                data: [
+                                    {type: 'max', name: '最大值'},
+                                    {type: 'min', name: '最小值'}
+                                ]
+                            },
+                            markLine: {
+                                data: [
+                                    {type: 'average', name: '平均值'}
+                                ]
+                            }
+                        },
+                        {
+                            name: '最低气温',
+                            type: 'line',
+                            data: [1, -2, 2, 5, 3, 2, 0],
+                            markPoint: {
+                                data: [
+                                    {name: '周最低', value: -2, xAxis: 1, yAxis: -1.5}
+                                ]
+                            },
+                            markLine: {
+                                data: [
+                                    {type: 'average', name: '平均值'}
+                                ]
+                            }
+                        }
+                    ]
+                };
 
-            <div class="col-md-6 mt-2">
-                <div class="card">
-                    <div class="dropdown pull-right menu-sett-card" >
-                        <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v men"></i>
-                        </a>
-                        <ul aria-labelledby="notifications" class="dropdown-menu">
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Edit</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">FAQ</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Support</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-block">
-                        <canvas id="line-chart" width="400" height="400"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mt-2">
-                <div class="card">
-                    <div class="dropdown pull-right menu-sett-card" >
-                        <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v men"></i>
-                        </a>
-                        <ul aria-labelledby="notifications" class="dropdown-menu">
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Edit</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">FAQ</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Support</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-block">
-                        <canvas id="line-chart-2D" width="400" height="400"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mt-2">
-                <div class="card">
-                    <div class="dropdown pull-right menu-sett-card" >
-                        <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v men"></i>
-                        </a>
-                        <ul aria-labelledby="notifications" class="dropdown-menu">
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Edit</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">FAQ</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Support</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-block">
-                        <canvas id="pie-chart1" width="400" height="400"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mt-2">
-                <div class="card">
-                    <div class="dropdown pull-right menu-sett-card" >
-                        <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v men"></i>
-                        </a>
-                        <ul aria-labelledby="notifications" class="dropdown-menu">
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Edit</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">FAQ</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Support</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-block">
-                        <canvas id="pie-chart2" width="400" height="400"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mt-2">
-                <div class="card">
-                    <div class="dropdown pull-right menu-sett-card" >
-                        <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v men"></i>
-                        </a>
-                        <ul aria-labelledby="notifications" class="dropdown-menu">
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Edit</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">FAQ</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Support</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-block">
-                        <canvas id="radar-chart" width="400" height="400"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mt-2">
-                <div class="card">
-                    <div class="dropdown pull-right menu-sett-card" >
-                        <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v men"></i>
-                        </a>
-                        <ul aria-labelledby="notifications" class="dropdown-menu">
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Edit</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">FAQ</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Support</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-block">
-                        <canvas id="polar-chart1" width="400" height="400"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mt-2">
-                <div class="card">
-                    <div class="dropdown pull-right menu-sett-card" >
-                        <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v men"></i>
-                        </a>
-                        <ul aria-labelledby="notifications" class="dropdown-menu">
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Edit</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">FAQ</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Support</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-block">
-                        <canvas id="polar-chart2" width="400" height="400"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mt-2">
-                <div class="card">
-                    <div class="dropdown pull-right menu-sett-card" >
-                        <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v men"></i>
-                        </a>
-                        <ul aria-labelledby="notifications" class="dropdown-menu">
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Edit</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">FAQ</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Support</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-block">
-                        <canvas id="doughnut-chart1" width="400" height="400"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mt-2">
-                <div class="card">
-                    <div class="dropdown pull-right menu-sett-card" >
-                        <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v men"></i>
-                        </a>
-                        <ul aria-labelledby="notifications" class="dropdown-menu">
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Edit</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">FAQ</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Support</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-block">
-                        <canvas id="doughnut-chart2" width="400" height="400"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mt-2">
-                <div class="card">
-                    <div class="dropdown pull-right menu-sett-card" >
-                        <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v men"></i>
-                        </a>
-                        <ul aria-labelledby="notifications" class="dropdown-menu">
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Edit</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">FAQ</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Support</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-block">
-                        <canvas id="bar-chart-horizontal" width="400" height="400"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mt-2">
-                <div class="card">
-                    <div class="dropdown pull-right menu-sett-card" >
-                        <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v men"></i>
-                        </a>
-                        <ul aria-labelledby="notifications" class="dropdown-menu">
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Edit</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">FAQ</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Support</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-block">
-                        <canvas id="bar-chart-grouped" width="400" height="400"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mt-2">
-                <div class="card">
-                    <div class="dropdown pull-right menu-sett-card" >
-                        <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v men"></i>
-                        </a>
-                        <ul aria-labelledby="notifications" class="dropdown-menu">
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Edit</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">FAQ</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Support</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-block">
-                        <canvas id="mixed-chart" width="400" height="400"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mt-2">
-                <div class="card">
-                    <div class="dropdown pull-right menu-sett-card" >
-                        <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v men"></i>
-                        </a>
-                        <ul aria-labelledby="notifications" class="dropdown-menu">
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Edit</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">FAQ</a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#" class="dropdown-item nav-link">Support</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-block">
-                        <canvas id="bubble-chart" width="400" height="400"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
+                myChart.setOption(option);
+            }
+        </script>
 
     </div>
 </div>
@@ -381,38 +133,12 @@
 <script src="${ctx}/static/js/bootstrap.min.js"></script>
 <script src="${ctx}/static/js/jquery.cookie.js"></script>
 <script src="${ctx}/static/js/jquery.validate.min.js"></script>
+<script src="${ctx}/static/js/echarts-all.js"></script>
 <script src="${ctx}/static/js/chart.min.js"></script>
 <script src="${ctx}/static/js/front.js"></script>
 
 <!--Core Javascript -->
 <script src="${ctx}/static/js/chart-page.js"></script>
-<script>
-    new Chart(document.getElementById("myChart-nav").getContext('2d'), {
-        type: 'doughnut',
-        data: {
-            labels: ["M", "T", "W", "T", "F", "S", "S"],
-            datasets: [{
-                backgroundColor: [
-                    "#2ecc71",
-                    "#3498db",
-                    "#95a5a6",
-                    "#9b59b6",
-                    "#f1c40f",
-                    "#e74c3c",
-                    "#34495e"
-                ],
-                data: [12, 19, 3, 17, 28, 24, 7]
-            }]
-        },
-        options: {
-            legend: { display: false },
-            title: {
-                display: true,
-                text: ''
-            }
-        }
-    });
-</script>
 
 </body>
 
