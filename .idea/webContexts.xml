@@ -4,6 +4,8 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/chart.jsp" value="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data" />
+        <entry key="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/historydata.jsp" value="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data" />
+        <entry key="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data/temp_stat.jsp" value="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/data" />
         <entry key="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/person/TbUsers.jsp" value="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/person" />
         <entry key="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/person/facilities.jsp" value="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/WEB-INF/jsp/person" />
         <entry key="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp/index.jsp" value="file://$PROJECT_DIR$/TemperatureAcq-web/src/main/webapp" />

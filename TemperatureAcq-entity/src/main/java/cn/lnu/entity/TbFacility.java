@@ -1,5 +1,7 @@
 package cn.lnu.entity;
 
+import cn.lnu.util.FormatDate;
+
 import java.util.Date;
 
 /**
@@ -63,8 +65,9 @@ public class TbFacility {
         this.max_temp = max_temp;
     }
 
-    public Date getCreated() {
-        return created;
+    public String getCreated() {
+       String date = FormatDate.mdhms(created.toString());
+        return date;
     }
 
     public void setCreated(Date created) {

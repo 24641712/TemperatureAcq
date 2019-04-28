@@ -60,7 +60,7 @@
                     <td>${tbFacility.handler}</td>
                     <td>${tbFacility.ip}</td>
                     <td>${tbFacility.min_temp}&#8451;~${tbFacility.max_temp}&#8451;</td>
-                    <td>12/13 13:24:34</td>
+                    <td>${tbFacility.created}</td>
                     <td><a href="#">编辑</a></td>
                     <td><a href="#">查看详情</a></td>
                 </tr>

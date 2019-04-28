@@ -333,7 +333,7 @@
                     <li><a href="#">Invoice</a></li>
                 </ul>
             </li>
-            <li> <a href="${ctx}/facility/stat.do" target="menuFrame"> <i class="fa fa-bar-chart"></i>温度统计 </a></li>
+            <li> <a href="${ctx}/data/temp.do" target="menuFrame"> <i class="fa fa-bar-chart"></i>温度统计 </a></li>
 
             <li><a href="#forms" aria-expanded="false" data-toggle="collapse">
                 <i class="fa fa-building-o"></i>管理 </a>
@@ -345,7 +345,7 @@
 
             <li> <a href="${ctx}/facility/chart.do" target="menuFrame"> <i class="fa fa-map-o"></i>曲线图 </a></li>
 
-            <li> <a href="${ctx}/facility/manage.do" target="menuFrame"> <i class="icon-grid"></i>数据管理 </a></li>
+            <li> <a href="${ctx}/data/histotydata.do" target="menuFrame"> <i class="icon-grid"></i>数据管理 </a></li>
 
         </ul><span class="heading">Extras</span>
         <ul class="list-unstyled">

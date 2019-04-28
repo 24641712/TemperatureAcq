@@ -1,13 +1,11 @@
 package cn.lnu.controller.data;
 
 import cn.lnu.service.TbFacilityService;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
-import javax.jws.WebParam;
 
 /**
  * @Author
@@ -20,17 +18,10 @@ public class TbFacilityController {
     @Resource
     private TbFacilityService tbFacilityService;
 
-    @RequestMapping("stat")
-    public ModelAndView getTbFacility(){
-        ModelAndView model = new ModelAndView();
-        model.setViewName("/data/temp_stat");
-        return model;
-    }
-
     @RequestMapping("manage")
     public ModelAndView getDataManage(){
         ModelAndView model = new ModelAndView();
-        model.setViewName("/data/datamanage");
+        model.setViewName("data/historydata");
         return model;
     }
 

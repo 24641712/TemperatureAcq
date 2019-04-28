@@ -16,7 +16,7 @@ public class FormatDate {
      /*
       *Thu May 16 00:00:00 CST 2019
       * @param null
-      * @return 
+      * @return 2019-05-16
       */
     public static String format(String dateStr){
             String[] aStrings = dateStr.split(" ");
@@ -59,6 +59,54 @@ public class FormatDate {
                 aStrings[1] = "12";
             }
         return aStrings[5] + "-" + aStrings[1] + "-" + aStrings[2];
+    }
+
+    /*
+     *Thu May 16 00:00:00 CST 2019
+     * @param null
+     * @return 5/16 00:00:00
+     */
+    public static String mdhms(String dateStr){
+        String[] aStrings = dateStr.split(" ");
+        Date date = new Date();
+        // 5
+        if (aStrings[1].equals("Jan")) {
+            aStrings[1] = "01";
+        }
+        if (aStrings[1].equals("Feb")) {
+            aStrings[1] = "02";
+        }
+        if (aStrings[1].equals("Mar")) {
+            aStrings[1] = "03";
+        }
+        if (aStrings[1].equals("Apr")) {
+            aStrings[1] = "04";
+        }
+        if (aStrings[1].equals("May")) {
+            aStrings[1] = "05";
+        }
+        if (aStrings[1].equals("Jun")) {
+            aStrings[1] = "06";
+        }
+        if (aStrings[1].equals("Jul")) {
+            aStrings[1] = "07";
+        }
+        if (aStrings[1].equals("Aug")) {
+            aStrings[1] = "08";
+        }
+        if (aStrings[1].equals("Sep")) {
+            aStrings[1] = "09";
+        }
+        if (aStrings[1].equals("Oct")) {
+            aStrings[1] = "10";
+        }
+        if (aStrings[1].equals("Nov")) {
+            aStrings[1] = "11";
+        }
+        if (aStrings[1].equals("Dec")) {
+            aStrings[1] = "12";
+        }
+        return aStrings[1] + "/" + aStrings[2]+" "+aStrings[3];
     }
 
 

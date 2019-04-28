@@ -58,7 +58,7 @@
                     <th scope="row">${tbUser.uid}</th>
                     <td>${tbUser.username}</td>
                     <td>${tbUser.email}</td>
-                    <td>12/13 13:24:35</td>
+                    <td>${tbUser.created}</td>
                     <td><a href="#">编辑</a></td>
                 </tr>
                 </c:forEach>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.lnu.dao.data.DataDao">
+
+  <resultMap id="TemperatureResult" type="Temperature">
+    <result property="id" column="id"/>
+    <result property="handler" column="handler"/>
+    <result property="temp" column="temp"/>
+    <result property="created" column="created"/>
+    <result property="upload" column="upload"/>
+  </resultMap>
+
+  <resultMap id="HistoricalDataResult" type="HistoricalData">
+      <result property="id" column="id"/>
+      <result property="handler" column="handler"/>
+      <result property="min_temp" column="min_temp"/>
+      <result property="max_temp" column="max_temp"/>
+      <result property="temp" column="temp"/>
+      <result property="notify" column="notify"/>
+      <result property="created" column="created"/>
+  </resultMap>
+
+  <!--查找所有用户-->
+  <select id="selectTemp" resultMap="TemperatureResult">
+      select u.id,f.handler as handler,u.temp,f.created,u.upload
+      from tb_upload u,tb_facility f
+      where u.ip = f.ip;
+  </select>
+
+  <!--查询设备总数-->
+  <select id="count" resultType="Integer">
+    select count(*) as count1
+    from tb_upload u,tb_facility f
+    where u.ip = f.ip
+  </select>
+
+  <select id="selectTempByPage" resultMap="TemperatureResult">
+      select u.id,f.handler as handler,u.temp,f.created,u.upload
+      from tb_upload u,tb_facility f
+      where u.ip = f.ip
+      limit #{startPos},#{pageSize};
+  </select>
+
+  <select id="historicalDataCount" resultType="Integer">
+      select count(*) as count1
+      from tb_upload u,tb_facility f
+      where u.ip = f.ip;
+  </select>
+
+  <select id="selectHistoricalDataByPage" resultMap="HistoricalDataResult"  >
+      select u.id,f.handler,f.min_temp,f.max_temp,u.temp,f.notify,f.created
+      from tb_upload u,tb_facility f
+      where u.ip = f.ip
+	  limit #{startPos},#{pageSize};
+  </select>
+
+
+  <!--&lt;!&ndash;按条件查询指定数据&ndash;&gt;-->
+  <!--<select id="selectTbFacilityByPage" resultMap="TbFacilityResult">-->
+    <!--select *-->
+    <!--from tb_facility-->
+    <!--limit #{startPos},#{pageSize};-->
+  <!--</select>-->
+
+
+  <!--&lt;!&ndash;添加用户数据&ndash;&gt;-->
+  <!--<insert id="addUser" parameterType="User">-->
+    <!--insert into users values(#{id},#{username},#{password});-->
+  <!--</insert>-->
+
+  <!--&lt;!&ndash;修改用户信息&ndash;&gt;-->
+  <!--<update id="updateUser" parameterType="User">-->
+    <!--update users set username=#{username},password=#{password} where id=#{id}-->
+  <!--</update>-->
+
+  <!--&lt;!&ndash;删除用户&ndash;&gt;-->
+  <!--<delete id="deleteUser" parameterType="Long">-->
+    <!--delete from users where id=#{id}-->
+  <!--</delete>-->
+
+  <!--&lt;!&ndash;根据用户id查寻用户信息&ndash;&gt;-->
+  <!--<select id="fingUserById" parameterType="Long" resultMap="UserResult">-->
+    <!--select * from users where id=#{id}-->
+  <!--</select>-->
+
+
+
+</mapper>
