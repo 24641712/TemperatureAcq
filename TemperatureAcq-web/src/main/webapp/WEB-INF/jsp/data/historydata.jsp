@@ -26,7 +26,8 @@
 </head>
 
 <body>
-
+<div align="left" style="margin-left: 20px;"><h5>超温历史数据&nbsp;
+    /&nbsp;Overtemperature historical data</h5></div><br/>
 <!--====================================================
                         PAGE CONTENT
 ======================================================-->

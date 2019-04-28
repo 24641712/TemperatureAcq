@@ -26,7 +26,8 @@
 </head>
 
 <body>
-
+<div align="left" style="margin-left: 20px;"><h5>设备管理&nbsp;
+    /&nbsp;device management</h5></div><br/>
 <!--====================================================
                         PAGE CONTENT
 ======================================================-->

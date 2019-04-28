@@ -26,7 +26,8 @@
 </head>
 
 <body>
-
+<div align="left" style="margin-left: 20px;"><h5>温度统计&nbsp;
+    /&nbsp;Temperature statistics</h5></div><br/>
 <!--====================================================
                         PAGE CONTENT
 ======================================================-->
