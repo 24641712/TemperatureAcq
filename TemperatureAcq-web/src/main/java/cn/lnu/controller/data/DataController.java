@@ -6,11 +6,13 @@ import cn.lnu.service.TemperatureService;
 import cn.lnu.util.Page;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -62,6 +64,20 @@ public class DataController {
         return model;
     }
 
+    @RequestMapping("getchart")
+    public List<Temperature>  getChartData(HttpServletRequest request){
+        String start = request.getParameter("start");
+        String end = request.getParameter("end");
+        ArrayList<Temperature> temps = new ArrayList<>();
+       return temps;
+    }
+
+    @RequestMapping("test")
+    public ModelAndView getTest(){
+        ModelAndView model = new ModelAndView();
+        model.setViewName("/data/test");
+        return model;
+    }
 
 
 }

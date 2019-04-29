@@ -26,7 +26,7 @@
   <select id="selectTemp" resultMap="TemperatureResult">
       select u.id,f.handler as handler,u.temp,f.created,u.upload
       from tb_upload u,tb_facility f
-      where u.ip = f.ip;
+      where u.ip = f.ip
   </select>
 
   <!--查询设备总数-->
@@ -40,20 +40,30 @@
       select u.id,f.handler as handler,u.temp,f.created,u.upload
       from tb_upload u,tb_facility f
       where u.ip = f.ip
-      limit #{startPos},#{pageSize};
+      limit #{startPos},#{pageSize}
+  </select>
+
+  <select id="selectHistoricalDataByTime" resultMap="TemperatureResult">
+      select u.id,f.handler as handler,u.temp,f.created,u.upload
+      from tb_upload u,tb_facility f
+      where u.ip = f.ip
+          <if test="start!=null and start!='' and end!=null and end!=''" >
+               and upload between  date_format(#{start}, '%Y-%m-%d %H:%i:%s')
+                and date_format(#{end},'%Y-%m-%d %H:%i:%s')
+          </if>
   </select>
 
   <select id="historicalDataCount" resultType="Integer">
       select count(*) as count1
       from tb_upload u,tb_facility f
-      where u.ip = f.ip;
+      where u.ip = f.ip
   </select>
 
   <select id="selectHistoricalDataByPage" resultMap="HistoricalDataResult"  >
       select u.id,f.handler,f.min_temp,f.max_temp,u.temp,f.notify,f.created
       from tb_upload u,tb_facility f
       where u.ip = f.ip
-	  limit #{startPos},#{pageSize};
+	  limit #{startPos},#{pageSize}
   </select>
 
 

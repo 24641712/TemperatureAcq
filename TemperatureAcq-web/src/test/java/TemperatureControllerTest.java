@@ -8,6 +8,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+import java.text.ParseException;
 import java.util.List;
 
 /**
@@ -50,6 +51,19 @@ public class TemperatureControllerTest {
         }
         System.out.println(totalCount);
     }
+
+    @Test
+    public void selectHistoricalDataByTime(){
+        String start = "2019-4-22 00:00:00";
+        String end = "2019-5-30 00:00:00";
+        List<Temperature> temps = null;
+        temps = temperatureService.selectHistoricalDataByTime(start,end);
+        for(Temperature temp:temps){
+            System.out.println(temp.toString());
+        }
+    }
+
+
 
 
 

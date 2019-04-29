@@ -7,6 +7,9 @@ import cn.lnu.service.TemperatureService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
@@ -30,6 +33,10 @@ public class TemperatureServiceImpl implements TemperatureService {
 
     public List<Temperature> selectTempByPage(int startPos, int pageSize) {
         return dataDao.selectTempByPage(startPos,pageSize);
+    }
+
+    public List<Temperature> selectHistoricalDataByTime(String start, String end) {
+        return dataDao.selectHistoricalDataByTime(start,end);
     }
 
     public int historicalDataCount() {

@@ -349,7 +349,7 @@
 
         </ul><span class="heading">Extras</span>
         <ul class="list-unstyled">
-            <li> <a href="#"> <i class="icon-picture"></i>Demo </a></li>
+            <li> <a href="${ctx}/data/test.do" target="menuFrame"> <i class="icon-picture"></i>Demo </a></li>
         </ul>
     </nav>
 

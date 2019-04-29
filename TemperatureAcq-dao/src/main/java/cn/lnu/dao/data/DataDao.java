@@ -4,6 +4,7 @@ import cn.lnu.entity.HistoricalData;
 import cn.lnu.entity.Temperature;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -27,6 +28,11 @@ public interface DataDao {
 
     //查询历史数据总数
     public int historicalDataCount();
+
+    //按时间查找数据
+    public List<Temperature> selectHistoricalDataByTime(
+            @Param(value = "start") String start,
+            @Param(value = "end") String end);
 
 
 
