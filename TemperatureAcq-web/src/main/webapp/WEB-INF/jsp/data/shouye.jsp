@@ -27,87 +27,86 @@
 </head>
 
 <body>
-<h5>&nbsp&nbsp&nbsp当前设备最新温度情况</h5>
-<!--====================================================
-                        PAGE CONTENT
-======================================================-->
-<div class="page-content d-flex align-items-stretch">
+<div style="margin-left: 20px">
+    <div align="left"><font size="4"><b>当前设备最新温度情况</b></font></div><br/>
+    <!--====================================================
+                            PAGE CONTENT
+    ======================================================-->
+    <div class="page-content d-flex align-items-stretch">
+        <div class="content-inner">
+            <!--***** REPORT-1 *****-->
+            <div class="row" id="report1">
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="text-left report1-cont">
+                                <h2 class="font-light m-b-0">
+                                    <i class="ti-arrow-up text-success"></i>
+                                    &nbsp;&nbsp;&nbsp;23&#8451;</h2>
+                                <span class="text-muted">设备：DZ1S11</span>
+                            </div>
+                            <span class="text-success">0</span>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 80%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p><small>12/13 13:24:34</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="text-left report1-cont">
+                                <h2 class="font-light m-b-0">
+                                    <i class="ti-arrow-up text-danger"></i>
+                                    &nbsp;&nbsp;&nbsp;24&#8451;</h2>
+                                <span class="text-muted">设备：DZ1S1</span>
+                            </div>
+                            <span class="text-danger">+1</span>
+                            <div class="progress">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 43%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p><small>12/13 13:24:34</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="text-left report1-cont">
+                                <h2 class="font-light m-b-0">
+                                    <i class="ti-arrow-up text-warning"></i>
+                                    &nbsp;&nbsp;&nbsp;25&#8451;</h2>
+                                <span class="text-muted">设备：DZ1S19 </span>
+                            </div>
+                            <span class="text-danger">+2</span>
+                            <div class="progress">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 53%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p><small>12/13 13:24:34</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="text-left report1-cont">
+                                <h2 class="font-light m-b-0">
+                                    <i class="ti-arrow-up text-info"></i>
+                                    &nbsp;&nbsp;&nbsp;21&#8451;</h2>
+                                <span class="text-muted">设备：DZ1S26</span>
+                            </div>
+                            <span class="text-info">-2</span>
+                            <div class="progress">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 70%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p><small>12/13 13:24:34</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-
-    <div class="content-inner">
-
-        <!--***** REPORT-1 *****-->
-        <div class="row" id="report1">
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class="card-block">
-                        <div class="text-left report1-cont">
-                            <h2 class="font-light m-b-0">
-                                <i class="ti-arrow-up text-success"></i>
-                                &nbsp;&nbsp;&nbsp;23&#8451;</h2>
-                            <span class="text-muted">设备：DZ1S11</span>
-                        </div>
-                        <span class="text-success">0</span>
-                        <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 80%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <p><small>12/13 13:24:34</small></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class="card-block">
-                        <div class="text-left report1-cont">
-                            <h2 class="font-light m-b-0">
-                                <i class="ti-arrow-up text-danger"></i>
-                                &nbsp;&nbsp;&nbsp;24&#8451;</h2>
-                            <span class="text-muted">设备：DZ1S1</span>
-                        </div>
-                        <span class="text-danger">+1</span>
-                        <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 43%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <p><small>12/13 13:24:34</small></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class="card-block">
-                        <div class="text-left report1-cont">
-                            <h2 class="font-light m-b-0">
-                                <i class="ti-arrow-up text-warning"></i>
-                                &nbsp;&nbsp;&nbsp;25&#8451;</h2>
-                            <span class="text-muted">设备：DZ1S19 </span>
-                        </div>
-                        <span class="text-danger">+2</span>
-                        <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 53%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <p><small>12/13 13:24:34</small></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class="card-block">
-                        <div class="text-left report1-cont">
-                            <h2 class="font-light m-b-0">
-                                <i class="ti-arrow-up text-info"></i>
-                                &nbsp;&nbsp;&nbsp;21&#8451;</h2>
-                            <span class="text-muted">设备：DZ1S26</span>
-                        </div>
-                        <span class="text-info">-2</span>
-                        <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 70%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <p><small>12/13 13:24:34</small></p>
-                    </div>
-                </div>
-            </div>
         </div>
-
     </div>
 </div>
 
@@ -120,7 +119,6 @@
 <script src="${ctx}/static/js/jquery.validate.min.js"></script>
 <script src="${ctx}/static/js/chart.min.js"></script>
 <script src="${ctx}/static/js/front.js"></script>
-
 <!--Core Javascript -->
 <script src="${ctx}/static/js/mychart.js"></script>
 </body>
