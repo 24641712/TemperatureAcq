@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="http://www.jemui.com/demo/css/jeui.css"  media="all">
     <link rel="stylesheet" href="http://www.jemui.com/demo/css/skin/jedate.css"  media="all">
     <link rel="stylesheet" href="${ctx}/static/css/mycss/combo.select.css"  media="all">
+    <link rel="stylesheet" href="${ctx}/static/css/mycss/modal.css"  media="all">
     <!-- Core Javascript -->
     <script src="${ctx}/static/js/bootstrap.min.js"></script>
     <script src="http://www.jemui.com/demo/js/modules/jeui.js"></script>
@@ -31,6 +32,30 @@
 
 <body>
 <div style="margin-left: 20px">
+    <!--======================================================
+       添加新用户模态框
+    =======================================================-->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header myModal-header">
+                    <font size="4"><b>添加新用户</b></font>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body myModal-body">
+                    <label>用户名:</label><input type="text" class="form-control" name="yhm" id="yhm"><br/>
+                    <label>Email:</label><input type="text" class="form-control" name="email" id="email"><br/>
+                    <span id="nameDiv2" style="color: red; font-size: 15px;"></span>
+                </div>
+
+                <div class="modal-footer myModal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-info" onclick="addTbUser() ">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--====================================================
              导航栏
     ======================================================-->
@@ -46,7 +71,7 @@
         <div>
             <button type="button" class="btn btn-info">查询</button>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <button type="button" class="btn btn-success">添加新用户</button>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal1">添加新用户</button>
         </div>
     </div>
     <!--=====================================================
@@ -123,6 +148,7 @@
 <script src="${ctx}/static/js/jquery.validate.min.js"></script>
 <script src="${ctx}/static/js/chart.min.js"></script>
 <script src="${ctx}/static/js/front.js"></script>
+<script src="${ctx}/static/js/myjs/TbUser.js"></script>
 
 <!--Core Javascript -->
 <script type="text/javascript">
@@ -139,6 +165,10 @@
            }
        }
    }
+   $('#myModal1').on('shown.bs.modal', function () {
+       $("#nameDiv2").empty();
+       $('#myInput').focus()
+   })
 </script>
 </body>
 

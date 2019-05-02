@@ -8,11 +8,15 @@ import cn.lnu.util.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.jws.WebParam;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 /**
@@ -42,6 +46,18 @@ public class TbUserController {
         ModelAndView model = new ModelAndView();
         model.setViewName("/index");
         return "redirect:/index.jsp";
+    }
+
+    @RequestMapping(value = "addTbUser",method = RequestMethod.POST)
+    public void getAddTbUser(HttpServletResponse response, HttpServletRequest request)throws IOException {
+       response.setContentType("text/html;charset=utf-8");
+        String yhm = request.getParameter("yhm");
+        String email = request.getParameter("email");
+        System.out.println(yhm+" "+email);
+        PrintWriter out = response.getWriter();
+        out.println("用户添加成功");
+        out.flush();
+        out.close();
     }
 
     @RequestMapping("/TbUsers")
