@@ -60,6 +60,13 @@
         <property name="minIdle" value="${jdbc.minIdle}"/>
         <!--定义最长等待时间-->
         <property name="maxWait" value="${jdbc.maxWait}"/>
+
+        <property name="removeAbandonedTimeout" value="${jdbc.removeAbandonedTimeout}"/>
+
+        <!--打开removeAbandoned-->
+        <property name="removeAbandoned" value="true" />
+
+        <property name="logAbandoned" value="true" />
     </bean>
 
     <!--使用jdbcTemplate连接数据源-->
