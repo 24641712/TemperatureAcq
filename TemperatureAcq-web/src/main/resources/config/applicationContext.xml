@@ -18,14 +18,12 @@
 
 
     <!-- 自动将Service层注入-->
-    <context:component-scan base-package="cn.lnu" use-default-filters="true">
+    <context:component-scan base-package="cn.lnu.service" use-default-filters="true">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
     <!--自动将dao层注入-->
-    <context:component-scan base-package="cn.lnu"/>
-
-    <context:component-scan base-package="cn.lnu.util"/>
+    <context:component-scan base-package="cn.lnu.dao"/>
 
     <!--读取邮件配置文件-->
     <context:property-placeholder location="classpath:config/mail.properties"

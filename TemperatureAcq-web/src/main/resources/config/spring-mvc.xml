@@ -21,8 +21,11 @@
 
     <!-- 扫描web下的bean -->
     <!--SpringMVC的配置文件，包含网站跳转的逻辑控制器-->
-    <context:component-scan base-package="cn.lnu" >
-    </context:component-scan>
+    <context:component-scan base-package="cn.lnu" />
+
+    <context:component-scan base-package="cn.lnu.util"/>
+
+    <bean id="LoginInterceptor" class="cn.lnu.interceptor.LoginInterceptor"></bean>
 
     <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
     <bean id="mappingJacksonHttpMessageConverter"
@@ -44,8 +47,6 @@
             <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
             <bean class="org.springframework.http.converter.BufferedImageHttpMessageConverter"/>
             <bean class="org.springframework.http.converter.ResourceHttpMessageConverter"/>
-
-
             <!-- 配置fastjson中实现HttpMessageConverter接口的转换器 -->
             <bean id="fastJsonHttpMessageConverter" class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
                 <!-- 加入支持的媒体类型，返回contentType -->
@@ -73,6 +74,41 @@
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
     </bean>
+
+    <!--
+        自定义拦截器 防止越过登录页面通过地址直接访问
+    -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="cn.lnu.interceptor.LoginInterceptor">
+                <property name="excludeUrls">
+                    <list>
+                        <value>/index/index.do</value>
+                        <value>/user/Login.do</value>
+                        <value>/user/loginCheck.do</value>
+                        <value>/user/register.do</value>
+                        <value>/user/userRegister.do</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <!--
+        抛出异常时
+        重定向到登录页
+    -->
+    <bean id="handlerExceptionResolver"
+          class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="cn.lnu.interceptor.WebAuthException">redirect:/user/Login.do</prop>
+            </props>
+        </property>
+    </bean>
+
+
 
     <!-- 配置文件上传，如果没有使用文件上传可以不用配置，当然如果不配，那么配置文件中也不必引入上传组件包 -->
     <bean id="multipartResolver"
