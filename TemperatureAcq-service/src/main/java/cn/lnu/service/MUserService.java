@@ -11,4 +11,6 @@ import java.util.List;
 public interface MUserService {
     public List<MUser> findAllMUser();
 
+    public MUser selectByName(MUser mUser);
+
 }

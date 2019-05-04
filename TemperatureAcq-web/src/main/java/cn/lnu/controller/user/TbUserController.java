@@ -6,13 +6,11 @@ import cn.lnu.service.TbFacilityService;
 import cn.lnu.service.UserService;
 import cn.lnu.util.Page;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
-import javax.jws.WebParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -37,15 +35,8 @@ public class TbUserController {
     @RequestMapping("/logout")
     public ModelAndView getLogout(){
         ModelAndView model =  new ModelAndView();
-        model.setViewName("/person/login");
+        model.setViewName("login");
         return model;
-    }
-
-    @RequestMapping("/login")
-    public String getLogin(){
-        ModelAndView model = new ModelAndView();
-        model.setViewName("/index");
-        return "redirect:/index.jsp";
     }
 
     @RequestMapping(value = "addTbUser",method = RequestMethod.POST)

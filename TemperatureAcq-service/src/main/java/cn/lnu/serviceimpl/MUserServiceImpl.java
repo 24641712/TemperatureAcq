@@ -22,4 +22,8 @@ public class MUserServiceImpl implements MUserService {
     public List<MUser> findAllMUser() {
         return mUserDao.findAllMUser();
     }
+
+    public MUser selectByName(MUser mUser) {
+        return mUserDao.selectByName(mUser);
+    }
 }

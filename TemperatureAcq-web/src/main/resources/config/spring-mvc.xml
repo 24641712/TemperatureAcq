@@ -25,8 +25,6 @@
 
     <context:component-scan base-package="cn.lnu.util"/>
 
-    <bean id="LoginInterceptor" class="cn.lnu.interceptor.LoginInterceptor"></bean>
-
     <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
     <bean id="mappingJacksonHttpMessageConverter"
           class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
@@ -81,14 +79,11 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
-            <bean class="cn.lnu.interceptor.LoginInterceptor">
+            <bean class="cn.lnu.controller.interceptor.LoginInterceptor">
                 <property name="excludeUrls">
                     <list>
-                        <value>/index/index.do</value>
-                        <value>/user/Login.do</value>
-                        <value>/user/loginCheck.do</value>
-                        <value>/user/register.do</value>
-                        <value>/user/userRegister.do</value>
+                        <value>/m_user/login.do</value>
+                        <value>/user/logout.do</value>
                     </list>
                 </property>
             </bean>
@@ -103,7 +98,7 @@
           class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <property name="exceptionMappings">
             <props>
-                <prop key="cn.lnu.interceptor.WebAuthException">redirect:/user/Login.do</prop>
+                <prop key="cn.lnu.controller.interceptor.WebAuthException">redirect:/user/logout.do</prop>
             </props>
         </property>
     </bean>

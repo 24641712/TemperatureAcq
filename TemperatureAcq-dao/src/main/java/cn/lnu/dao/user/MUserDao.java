@@ -13,5 +13,7 @@ public interface MUserDao {
 
     public List<MUser> findAllMUser();
 
+    public MUser selectByName(MUser mUser);
+
 
 }

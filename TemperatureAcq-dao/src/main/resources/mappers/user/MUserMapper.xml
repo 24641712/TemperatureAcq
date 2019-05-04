@@ -18,6 +18,14 @@
       from m_user;
   </select>
 
+  <!--按用户名和密码查询用户-->
+  <select id="selectByName" parameterType="MUser" resultMap="MUserResult">
+    select *
+    from m_user
+    where username = #{username} and password = #{password}
+  </select>
+
+
 
   <!--&lt;!&ndash;添加用户数据&ndash;&gt;-->
   <!--<insert id="addUser" parameterType="User">-->
