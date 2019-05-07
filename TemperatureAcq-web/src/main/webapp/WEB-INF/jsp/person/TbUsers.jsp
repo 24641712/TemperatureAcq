@@ -44,8 +44,8 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body myModal-body">
-                    <label>用户名:</label><input type="text" class="form-control" name="yhm" id="yhm"><br/>
-                    <label>Email:</label><input type="text" class="form-control" name="email" id="email"><br/>
+                    <label>用户名:</label><input type="text" class="form-control" name="yhm" id="yhm" placeholder="用户名"><br/>
+                    <label>Email:</label><input type="text" class="form-control" name="email" id="email" placeholder="username1@qorvo.com"><br/>
                     <span id="nameDiv2" style="color: red; font-size: 15px;"></span>
                 </div>
 
@@ -166,8 +166,9 @@
        }
    }
    $('#myModal1').on('shown.bs.modal', function () {
+       $("#yhm").val("");$("#email").val("");
        $("#nameDiv2").empty();
-       $('#myInput').focus()
+       $('#myInput').focus();
    })
 </script>
 </body>

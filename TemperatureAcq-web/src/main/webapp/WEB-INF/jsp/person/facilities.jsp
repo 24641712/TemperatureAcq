@@ -38,19 +38,19 @@
                 <div class="modal-body myModal-body">
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Handler:</label>
-                        <input type="text" class="form-control" name="yhm" placeholder="DZ1S11">
+                        <input type="text" class="form-control" id="handler" placeholder="DZ1S11">
                     </div>
                     <div class="form-group">
                         <label style="display: inline-block;width: 120px">&nbsp;&nbsp;设备IP:</label>
-                        <input type="text" class="form-control" name="Email" placeholder="192.168.1.1">
+                        <input type="text" class="form-control" id="ip" placeholder="192.168.1.1">
                     </div>
                     <div class="form-group">
                         <div>
                             <label style="display: block;width: 300px">&nbsp;&nbsp;正常范围:</label>
                         </div>
                         <div class="form-inline">
-                            <input type="text" class="form-control" name="min" placeholder="最低值&#8451;" style="width: 120px">&nbsp;~
-                            &nbsp;<input type="text" class="form-control" name="max" placeholder="最高值&#8451;" style="width: 120px">
+                            <input type="text" class="form-control" id="min" name="min" placeholder="最低值&#8451;" style="width: 120px">&nbsp;~
+                            &nbsp;<input type="text" class="form-control" id="max" name="max" placeholder="最高值&#8451;" style="width: 120px">
                         </div>
                     </div>
                     <div class="form-group" style="height: 97px">
@@ -61,28 +61,29 @@
                         </div>
                         <div>
                             <div class="container" style="width:250px;margin-left: -17px;">
-                                <select class="demo" multiple="multiple" style="width: 80px">
+                                <select class="demo" id="selectid" multiple="multiple" style="width: 80px">
                                     <optgroup label="Group1">
-                                        <option value="cp">用户1</option>
-                                        <option value="cs">用户2</option>
-                                        <option value="oc">用户3</option>
-                                        <option value="c">用户4</option>
+                                        <option value="用户1">用户1</option>
+                                        <option value="用户2">用户2</option>
+                                        <option value="用户3">用户3</option>
+                                        <option value="用户4">用户4</option>
                                     </optgroup>
                                     <optgroup label="Group2">
-                                        <option value="js">用户5</option>
-                                        <option value="php">用户6</option>
+                                        <option value="用户5">用户5</option>
+                                        <option value="用户6">用户6</option>
                                     </optgroup>
                                 </select>
                             </div>
                             <div style="height: 30px;margin-top: 5px;">
-                                <span class="selectcontainer">用户1、用户2、用户3、用户4、用户5、用户6、用户7、用户8</span>
+                                <span id="selectcontainer">&nbsp;</span>
                             </div>
                        </div>
+                        <span id="nameDiv2" style="color: red; font-size: 15px;"></span>
                     </div>
                 </div>
                 <div class="modal-footer myModal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button type="button" class="btn btn-info">提交</button>
+                    <button type="button" class="btn btn-info" onclick="addFatifities()">提交</button>
                 </div>
             </div>
         </div>
@@ -172,6 +173,7 @@
 </div>
 <!--Global Javascript -->
 <script src="${ctx}/static/js/jquery.min.js"></script>
+<script src="${ctx}/static/js/myjs/Facilities.js"></script>
 <script src="${ctx}/static/js/myjs/fSelect.js"></script>
 <script src="${ctx}/static/js/popper/popper.min.js"></script>
 <script src="${ctx}/static/js/tether.min.js"></script>
@@ -197,12 +199,16 @@
     }
 
     $('#myModal2').on('shown.bs.modal', function () {
-        $('#myInput').focus()
+        $("#handler").val("");$("#ip").val("");
+        $("#min").val("");$("#max").val("");
+        $("#nameDiv2").empty();
+        $('#myInput').focus();
     })
 
     $(function() {
         $('.demo').fSelect();
     });
+
 </script>
 </body>
 </html>
