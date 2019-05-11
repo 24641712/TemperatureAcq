@@ -1,5 +1,6 @@
 package cn.lnu.dao.user;
 
+import cn.lnu.entity.insert_pojo.InsertTbUser;
 import cn.lnu.entity.TbUser;
 import org.apache.ibatis.annotations.Param;
 
@@ -17,6 +18,8 @@ public interface   TbUserDao {
 
     public List<TbUser> selectTbUsersByPage(@Param(value="startPos")Integer startPos,
                                             @Param(value="pageSize")Integer pageSize);
+
+    public int addTbUser(InsertTbUser tbUser);
 
 
 }

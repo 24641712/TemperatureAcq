@@ -1,6 +1,7 @@
 package cn.lnu.dao.data;
 
 import cn.lnu.entity.TbFacility;
+import cn.lnu.entity.insert_pojo.InsertTbFacility;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -21,6 +22,9 @@ public interface TbFacilityDao {
 
     //查询设备
     public List<TbFacility> selectHandlers();
+
+    //添加设备
+    public int insertTbFacility(InsertTbFacility insertTbFacility);
 
 
 

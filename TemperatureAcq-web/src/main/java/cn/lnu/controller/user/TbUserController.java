@@ -1,5 +1,6 @@
 package cn.lnu.controller.user;
 
+import cn.lnu.entity.insert_pojo.InsertTbUser;
 import cn.lnu.entity.TbFacility;
 import cn.lnu.entity.TbUser;
 import cn.lnu.service.TbFacilityService;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -41,12 +43,21 @@ public class TbUserController {
 
     @RequestMapping(value = "addTbUser",method = RequestMethod.POST)
     public void getAddTbUser(HttpServletResponse response, HttpServletRequest request)throws IOException {
-       response.setContentType("text/html;charset=utf-8");
+        response.setContentType("text/html;charset=utf-8");
+        InsertTbUser insertTbUser = new InsertTbUser();
         String yhm = request.getParameter("yhm");
         String email = request.getParameter("email");
+        insertTbUser.setUsername(yhm);
+        insertTbUser.setEmail(email);
+        insertTbUser.setInsertCreated(new Date());
         System.out.println(yhm+" "+email);
+        int result = userService.addTbUser(insertTbUser);
         PrintWriter out = response.getWriter();
-        out.println("用户添加成功");
+        if(result == 1){
+            out.println("用户添加成功");
+        }else{
+            out.println("用户添加失败");
+        }
         out.flush();
         out.close();
     }

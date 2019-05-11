@@ -1,6 +1,7 @@
 package cn.lnu.service;
 
 import cn.lnu.entity.TbFacility;
+import cn.lnu.entity.insert_pojo.InsertTbFacility;
 
 import java.util.List;
 
@@ -17,6 +18,8 @@ public interface TbFacilityService {
     public List<TbFacility> selectTbFacilityByPage(int startPos,int pageSize);
 
     public List<TbFacility> selectHandlers();
+
+    public int insertTbFacility(InsertTbFacility insertTbFacility);
 
 
 }

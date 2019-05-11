@@ -173,7 +173,7 @@
 </div>
 <!--Global Javascript -->
 <script src="${ctx}/static/js/js/jquery.min.js"></script>
-<script src="${ctx}/static/js/myjs/Facilities.js"></script>
+<script src="${ctx}/static/js/myjs/TbFacilities.js"></script>
 <script src="${ctx}/static/js/myjs/fSelect.js"></script>
 <script src="${ctx}/static/js/popper/popper.min.js"></script>
 <script src="${ctx}/static/js/js/tether.min.js"></script>

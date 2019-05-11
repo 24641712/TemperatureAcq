@@ -41,8 +41,6 @@ public class TbFacilityControllerTest {
         for(TbFacility tbFacility:handlers){
             System.out.println(tbFacility.getHandler()+","+tbFacility.getIp());
         }
-
-
     }
 
 

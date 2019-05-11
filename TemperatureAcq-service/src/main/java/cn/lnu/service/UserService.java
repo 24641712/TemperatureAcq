@@ -1,5 +1,6 @@
 package cn.lnu.service;
 
+import cn.lnu.entity.insert_pojo.InsertTbUser;
 import cn.lnu.entity.TbUser;
 
 import java.util.List;
@@ -15,5 +16,7 @@ public interface UserService {
     public int count();
 
     public List<TbUser> selectTbUserByPage(int startPos,int pageSize);
+
+    public int addTbUser(InsertTbUser tbUser);
 
 }

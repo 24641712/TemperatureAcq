@@ -2,6 +2,7 @@ package cn.lnu.serviceimpl;
 
 import cn.lnu.dao.data.TbFacilityDao;
 import cn.lnu.entity.TbFacility;
+import cn.lnu.entity.insert_pojo.InsertTbFacility;
 import cn.lnu.service.TbFacilityService;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +33,10 @@ public class TbFacilitiesImpl implements TbFacilityService {
 
     public List<TbFacility> selectHandlers() {
         return tbFacilityDao.selectHandlers();
+    }
+
+    public int insertTbFacility(InsertTbFacility insertTbFacility) {
+        return tbFacilityDao.insertTbFacility(insertTbFacility);
     }
 
 

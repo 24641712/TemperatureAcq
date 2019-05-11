@@ -36,6 +36,11 @@
     from tb_facility
   </select>
 
+  <insert id="insertTbFacility" parameterType="InsertTbFacility" keyProperty="fid" useGeneratedKeys="true">
+    insert into tb_facility
+    values(#{fid},#{handler},#{ip},#{min_temp},#{max_temp},#{notify},#{insertUpload});
+  </insert>
+
 
   <!--&lt;!&ndash;添加用户数据&ndash;&gt;-->
   <!--<insert id="addUser" parameterType="User">-->

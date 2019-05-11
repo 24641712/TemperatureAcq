@@ -20,6 +20,8 @@ public class TbFacility {
 
     private int max_temp;
 
+    private String notify;
+
     private Date created;
 
     public TbFacility() {
@@ -65,6 +67,14 @@ public class TbFacility {
         this.max_temp = max_temp;
     }
 
+    public String getNotify() {
+        return notify;
+    }
+
+    public void setNotify(String notify) {
+        this.notify = notify;
+    }
+
     public String getCreated() {
        String date = FormatDate.mdhms(created.toString());
         return date;
@@ -82,6 +92,7 @@ public class TbFacility {
                 ", ip='" + ip + '\'' +
                 ", min_temp=" + min_temp +
                 ", max_temp=" + max_temp +
+                ", notify='" + notify + '\'' +
                 ", created=" + created +
                 '}';
     }

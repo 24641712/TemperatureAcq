@@ -1,6 +1,7 @@
 package cn.lnu.serviceimpl;
 
 import cn.lnu.dao.user.TbUserDao;
+import cn.lnu.entity.insert_pojo.InsertTbUser;
 import cn.lnu.entity.TbUser;
 import cn.lnu.service.UserService;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,9 @@ public class UserServiceImpl implements UserService {
 
     public List<TbUser> selectTbUserByPage(int startPos, int pageSize) {
         return tbUserDao.selectTbUsersByPage(startPos,pageSize);
+    }
+
+    public int addTbUser(InsertTbUser tbUser) {
+        return tbUserDao.addTbUser(tbUser);
     }
 }

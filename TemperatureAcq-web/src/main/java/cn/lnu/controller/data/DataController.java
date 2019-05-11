@@ -40,24 +40,6 @@ public class DataController {
     @RequestMapping("temp")
     public ModelAndView getTemp(HttpServletRequest request) {
         ModelAndView model = new ModelAndView();
-        String pageNow = request.getParameter("pageNow");
-        String inpstart = request.getParameter("inpstart");
-        String inpend = request.getParameter("inpend")  ;
-        String ip = request.getParameter("ip");
-        System.out.println("pageNow:"+pageNow+", inpstart:"+inpstart+",inpend:"+inpend+",ip:"+ip);
-        int totalCount = temperatureService.count(inpstart,inpend,ip);
-        List<TbFacility> handlers = tbFacilityService.selectHandlers();
-        Page page = null;
-        if(pageNow == null){
-            page = new Page(totalCount,1);
-        }else{
-            page = new Page(totalCount,Integer.parseInt(pageNow));
-        }
-        List<Temperature> temps = temperatureService.selectTempByPage(
-                page.getStartPos(),page.getPageSize(),inpstart,inpend,ip);
-        model.addObject("handlers",handlers);
-        model.addObject("temps",temps);
-        model.addObject("page",page);
         model.setViewName("/data/temp_stat");
         return model;
     }

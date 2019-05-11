@@ -30,11 +30,10 @@
     limit #{startPos},#{pageSize};
   </select>
 
-
-  <!--&lt;!&ndash;添加用户数据&ndash;&gt;-->
-  <!--<insert id="addUser" parameterType="User">-->
-    <!--insert into users values(#{id},#{username},#{password});-->
-  <!--</insert>-->
+  <!--添加用户-->
+  <insert id="addTbUser" parameterType="InsertTbUser" keyProperty="uid" useGeneratedKeys="true">
+    insert into tb_user values(#{Uid},#{username},#{email},#{insertCreated});
+  </insert>
 
   <!--&lt;!&ndash;修改用户信息&ndash;&gt;-->
   <!--<update id="updateUser" parameterType="User">-->

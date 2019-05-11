@@ -9,7 +9,6 @@ function addTbUser() {
         $("#nameDiv2").html("邮箱不能为空!");
         return;
     }else if(reg.test($("#email").val())){
-        alert("用户名：" + yhm + "  email：" + email);
         $.post("/user/addTbUser.do",
             {"yhm": yhm, "email": email},
             function (data) {
