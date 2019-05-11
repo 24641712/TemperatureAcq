@@ -31,12 +31,12 @@ public class TemperatureControllerTest {
 
     @Test
     public void getTempByPage(){
-//        String inpstart = "2019-04-20 19:39:19";
-        String inpstart = null;
-//        String inpend = "2019-05-30 19:39:19";
-        String inpend = null;
-//        String ip = "192.168.1.2";
-        String ip = null;
+        String inpstart = "2019-04-20 19:39:19";
+//        String inpstart = null;
+        String inpend = "2019-04-29 19:39:19";
+//        String inpend = null;
+        String ip = "192.168.1.1";
+//        String ip = null;
         int totalCount = temperatureService.count(inpstart,inpend,ip);
         Page page = new Page(totalCount,1);
         List<Temperature> temps = temperatureService.selectTempByPage(
@@ -62,7 +62,7 @@ public class TemperatureControllerTest {
     @Test
     public void selectHistoricalDataByTime(){
         String start = "2019-4-22 00:00:00";
-        String end = "2019-5-30 00:00:00";
+        String end = "2019-4-29 00:00:00";
         List<Temperature> temps = null;
         temps = temperatureService.selectHistoricalDataByTime(start,end);
         for(Temperature temp:temps){

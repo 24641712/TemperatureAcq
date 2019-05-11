@@ -50,7 +50,7 @@
             <p>
                 <input type="text" name="title" id="inpstart" placeholder="开始日期" readonly class="je-input je-pl5 je-pr5">
                 &nbsp;至&nbsp;<input type="text" name="title" id="inpend" placeholder="结束日期" readonly class="je-input je-pl5 je-pr5">
-                <button type="button" class="btn btn-info" onclick="searchtemp(1)">查询</button>
+                <button type="button" class="btn btn-info" onclick="searchResult()">查询</button>
                 &nbsp;&nbsp;<button type="button" class="btn btn-success">数据导出</button>
                 <input type="hidden" id="selectid_2"/>
                 <input type="hidden" id="inpstart_2"/>
@@ -125,7 +125,7 @@
             <a href="#" onclick="pageAjaxEnd()">尾页</a>
 
             <input type="hidden" id="totalPageCount" value=""/>
-            <<input type="hidden" id="pageNow" value="">
+            <input type="hidden" id="pageNow" value="">
         </div>
     </div>
 
@@ -144,12 +144,13 @@
 <script src="${ctx}/static/js/js/front.js"></script>
 <script src="${ctx}/static/js/myjs/temp_stat.js"></script>
 
+
 <!--Core Javascript -->
 <script type="text/javascript">
     window.onload = function () {
-        alert("弹出数据");
+        // alert("弹出数据");
         setColor()
-        pageTemp(1);
+        initTemp();
 
         // var color = ['table-warning','table-success','table-danger','table-info']
         // var rows=document.getElementById("table1").rows;
@@ -164,12 +165,61 @@
         // }
     }
 </script>
-<script>
+<script type="text/javascript">
     $(function() {
         $('select').comboSelect();
         $('select').attr("ats","sdf");
     });
 </script>
+<script type="text/javascript">
+    //首页
+     function pageAjaxFirst() {
+         $('#pageNow').val(1);
+         pageSearch();
+     }
+
+    //上一页
+     function pageAjaxPrev() {
+         var pageNow = parseInt($('#pageNow').val());
+         if (pageNow-1 > 0) {
+             $('#pageNow').val(pageNow -1);
+         }else{
+             $('#pageNow').val(1);
+         }
+         pageSearch();
+     }
+
+    //下一页
+     function pageAjaxNext(){
+         var totalPageCount = parseInt($('#totalPageCount').val());
+         var pageNow = parseInt($('#pageNow').val());
+         if(totalPageCount==0){
+             $('#pageNow').val(pageNow);
+
+         }else if(pageNow+1<totalPageCount){
+            $('#pageNow').val(pageNow+1);
+
+         }else {
+             $('#pageNow').val(totalPageCount);
+
+         }
+         pageSearch();
+     }
+
+    //尾页
+     function pageAjaxEnd(){
+         var totalPageCount = parseInt($('#totalPageCount').val());
+         var pageNow = parseInt($('#pageNow').val());
+         if(totalPageCount==0){
+             $('#pageNow').val(pageNow);
+         }else{
+             $('#pageNow').val(totalPageCount);
+         }
+         pageSearch();
+     }
+
+ </script>
+
 </body>
 
 </html>
