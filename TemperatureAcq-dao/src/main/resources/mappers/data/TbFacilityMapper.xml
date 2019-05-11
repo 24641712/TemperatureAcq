@@ -28,7 +28,12 @@
   <select id="selectTbFacilityByPage" resultMap="TbFacilityResult">
     select *
     from tb_facility
-    limit #{startPos},#{pageSize};
+    limit #{startPos},#{pageSize}
+  </select>
+
+  <select id="selectHandlers" resultMap="TbFacilityResult">
+    select handler,ip
+    from tb_facility
   </select>
 
 

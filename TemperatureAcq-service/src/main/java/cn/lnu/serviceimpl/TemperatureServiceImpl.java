@@ -27,12 +27,13 @@ public class TemperatureServiceImpl implements TemperatureService {
         return dataDao.selectTemp();
     }
 
-    public int count() {
-        return dataDao.count();
+    public int count(String inpstart, String inpend, String ip) {
+        return dataDao.count(inpstart,inpend,ip);
     }
 
-    public List<Temperature> selectTempByPage(int startPos, int pageSize) {
-        return dataDao.selectTempByPage(startPos,pageSize);
+
+    public List<Temperature> selectTempByPage(int startPos, int pageSize,String inpstart,String inpend,String ip) {
+        return dataDao.selectTempByPage(startPos,pageSize,inpstart,inpend,ip);
     }
 
     public List<Temperature> selectHistoricalDataByTime(String start, String end) {

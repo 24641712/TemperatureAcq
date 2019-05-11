@@ -31,13 +31,20 @@ public class TemperatureControllerTest {
 
     @Test
     public void getTempByPage(){
-        int totalCount = temperatureService.count();
+//        String inpstart = "2019-04-20 19:39:19";
+        String inpstart = null;
+//        String inpend = "2019-05-30 19:39:19";
+        String inpend = null;
+//        String ip = "192.168.1.2";
+        String ip = null;
+        int totalCount = temperatureService.count(inpstart,inpend,ip);
         Page page = new Page(totalCount,1);
         List<Temperature> temps = temperatureService.selectTempByPage(
-                page.getStartPos(),page.getPageSize());
+                page.getStartPos(),page.getPageSize(),inpstart,inpend,ip);
         for(Temperature temperature:temps){
             System.out.println(temperature.toString());
         }
+        System.out.println("totalCount:"+totalCount);
     }
 
     @Test

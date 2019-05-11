@@ -34,15 +34,9 @@
     <div class="zzsc" style="float: left;margin-top: 20px;width: 140px;">
         <select>
             <option value="" selected>全部设备</option>
-            <option value="一月">DZ1S11</option>
-            <option value="二月">DZ1S1</option>
-            <option value="三月">DZ1S19</option>
-            <option value="四月">DZ1S26</option>
-            <option value="五月">DZ5S10</option>
-            <option value="六月">DZ7S04</option>
-            <option value="七月">DZ1S26</option>
-            <option value="八月">DZ5S10</option>
-            <option value="九月">DZ7S04</option>
+            <c:forEach items="${handlers}" var="head">
+                <option value="${head.ip}">${head.handler}</option>
+            </c:forEach>
         </select>
     </div>
     <div class="je-p20"style="margin-left: 130px;width: 500px">
@@ -176,14 +170,14 @@
 </div>
 
 <!--Global Javascript -->
-<script src="${ctx}/static/js/jquery.min.js"></script>
+<script src="${ctx}/static/js/js/jquery.min.js"></script>
 <script src="http://www.jemui.com/demo/js/userdata.js"></script>
 <script src="${ctx}/static/js/myjs/jquery.combo.select.js"></script>
 <script src="${ctx}/static/js/popper/popper.min.js"></script>
-<script src="${ctx}/static/js/tether.min.js"></script>
+<script src="${ctx}/static/js/js/tether.min.js"></script>
 <script src="${ctx}/static/js/echarts-all.js"></script>
 <script src="${ctx}/static/js/chart.min.js"></script>
-<script src="${ctx}/static/js/front.js"></script>
+<script src="${ctx}/static/js/js/front.js"></script>
 <script src="${ctx}/static/js/myjs/chart.js"></script>
 <!--Core Javascript -->
 <script src="${ctx}/static/js/chart-page.js"></script>

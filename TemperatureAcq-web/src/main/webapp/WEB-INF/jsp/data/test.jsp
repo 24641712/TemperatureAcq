@@ -7,7 +7,7 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="${ctx}/static/css/mycss/combo.select.css"  media="all">
-    <script src="${ctx}/static/js/jquery.min.js"></script>
+    <script src="${ctx}/static/js/js/jquery.min.js"></script>
     <script src="${ctx}/static/js/myjs/jquery.combo.select.js"></script>
 </head>
 <body>

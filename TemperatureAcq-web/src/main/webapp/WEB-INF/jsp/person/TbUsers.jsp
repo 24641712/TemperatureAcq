@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="${ctx}/static/css/mycss/combo.select.css"  media="all">
     <link rel="stylesheet" href="${ctx}/static/css/mycss/modal.css"  media="all">
     <!-- Core Javascript -->
-    <script src="${ctx}/static/js/bootstrap.min.js"></script>
+    <script src="${ctx}/static/js/js/bootstrap.min.js"></script>
     <script src="http://www.jemui.com/demo/js/modules/jeui.js"></script>
 </head>
 
@@ -138,16 +138,16 @@
 </div>
 
 <!--Global Javascript -->
-<script src="${ctx}/static/js/jquery.min.js"></script>
+<script src="${ctx}/static/js/js/jquery.min.js"></script>
 <script src="http://www.jemui.com/demo/js/userdata.js"></script>
 <script src="${ctx}/static/js/myjs/jquery.combo.select.js"></script>
 <script src="${ctx}/static/js/popper/popper.min.js"></script>
-<script src="${ctx}/static/js/tether.min.js"></script>
-<script src="${ctx}/static/js/bootstrap.min.js"></script>
-<script src="${ctx}/static/js/jquery.cookie.js"></script>
-<script src="${ctx}/static/js/jquery.validate.min.js"></script>
-<script src="${ctx}/static/js/chart.min.js"></script>
-<script src="${ctx}/static/js/front.js"></script>
+<script src="${ctx}/static/js/js/tether.min.js"></script>
+<script src="${ctx}/static/js/js/bootstrap.min.js"></script>
+<script src="${ctx}/static/js/js/jquery.cookie.js"></script>
+<script src="${ctx}/static/js/js/jquery.validate.min.js"></script>
+<script src="${ctx}/static/js/js/chart.min.js"></script>
+<script src="${ctx}/static/js/js/front.js"></script>
 <script src="${ctx}/static/js/myjs/TbUser.js"></script>
 
 <!--Core Javascript -->

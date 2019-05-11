@@ -34,12 +34,36 @@
     select count(*) as count1
     from tb_upload u,tb_facility f
     where u.ip = f.ip
+    <choose>
+        <when test="ip!=null and ip!=''">
+           and u.ip = #{ip}
+      </when>
+      <when test="inpstart!=null and inpstart!=''">
+           and upload &gt;=  date_format(#{inpstart},'%Y-%m-%d %H:%i:%s')
+      </when>
+      <when test="inpend!=null and inpend!=''">
+           and upload &lt;= date_format(#{inpend},'%Y-%m-%d %H:%i:%s')
+      </when>
+
+    </choose>
+
   </select>
 
   <select id="selectTempByPage" resultMap="TemperatureResult">
       select u.id,f.handler as handler,u.temp,f.created,u.upload
       from tb_upload u,tb_facility f
       where u.ip = f.ip
+      <choose>
+          <when test="ip!=null and ip!=''">
+              and u.ip = #{ip}
+          </when>
+          <when test="inpstart!=null and inpstart!=''">
+              and upload &gt;=  date_format(#{inpstart},'%Y-%m-%d %H:%i:%s')
+          </when>
+          <when test="inpend!=null and inpend!=''">
+              and upload &lt;= date_format(#{inpend},'%Y-%m-%d %H:%i:%s')
+          </when>
+      </choose>
       limit #{startPos},#{pageSize}
   </select>
 

@@ -1,19 +1,27 @@
 package cn.lnu.controller.data;
 
 import cn.lnu.entity.HistoricalData;
+import cn.lnu.entity.TbFacility;
 import cn.lnu.entity.Temperature;
+import cn.lnu.service.TbFacilityService;
 import cn.lnu.service.TemperatureService;
 import cn.lnu.util.Page;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author ccl
@@ -25,11 +33,20 @@ public class DataController {
     @Resource
     private TemperatureService temperatureService;
 
+    @Resource
+    private TbFacilityService tbFacilityService;
+
+    //按条件显示温度统计数据
     @RequestMapping("temp")
-    public ModelAndView getTemp(HttpServletRequest request){
+    public ModelAndView getTemp(HttpServletRequest request) {
         ModelAndView model = new ModelAndView();
-        int totalCount = temperatureService.count();
         String pageNow = request.getParameter("pageNow");
+        String inpstart = request.getParameter("inpstart");
+        String inpend = request.getParameter("inpend")  ;
+        String ip = request.getParameter("ip");
+        System.out.println("pageNow:"+pageNow+", inpstart:"+inpstart+",inpend:"+inpend+",ip:"+ip);
+        int totalCount = temperatureService.count(inpstart,inpend,ip);
+        List<TbFacility> handlers = tbFacilityService.selectHandlers();
         Page page = null;
         if(pageNow == null){
             page = new Page(totalCount,1);
@@ -37,13 +54,38 @@ public class DataController {
             page = new Page(totalCount,Integer.parseInt(pageNow));
         }
         List<Temperature> temps = temperatureService.selectTempByPage(
-                page.getStartPos(),page.getPageSize());
-
+                page.getStartPos(),page.getPageSize(),inpstart,inpend,ip);
+        model.addObject("handlers",handlers);
         model.addObject("temps",temps);
         model.addObject("page",page);
         model.setViewName("/data/temp_stat");
         return model;
     }
+
+    @ResponseBody
+    @RequestMapping("ajax_temp")
+    public Map<String,Object> getAjax_Temp(HttpServletRequest request){
+        String pageNow = request.getParameter("pageNow");
+        String inpstart = request.getParameter("inpstart");
+        String inpend = request.getParameter("inpend");
+        String ip = request.getParameter("ip");
+        System.out.println("pageNow:"+pageNow+", inpstart:"+inpstart+",inpend:"+inpend+",ip:"+ip);
+        int totalCount = temperatureService.count(inpstart,inpend,ip);
+        Page page = null;
+        if(pageNow == null){
+            page = new Page(totalCount,1);
+        }else{
+            page = new Page(totalCount,Integer.parseInt(pageNow));
+        }
+        List<Temperature> temps = temperatureService.selectTempByPage(
+                page.getStartPos(),page.getPageSize(),inpstart,inpend,ip);
+        Map<String,Object> map = new HashMap<String,Object>();
+        map.put("temps",temps);
+        map.put("page",page);
+        map.put("str","罗纳尔多");
+        return map;
+    }
+
 
     @RequestMapping("histotydata")
     public ModelAndView getHistoricalData(HttpServletRequest request){
@@ -58,6 +100,8 @@ public class DataController {
         }
         List<HistoricalData> historicalDatas = temperatureService.selectHistoricalDataByPage(
                        page.getStartPos(),page.getPageSize());
+        List<TbFacility> handlers = tbFacilityService.selectHandlers();
+        model.addObject("handlers",handlers);
         model.addObject("historicalDatas",historicalDatas);
         model.addObject("page",page);
         model.setViewName("/data/historydata");

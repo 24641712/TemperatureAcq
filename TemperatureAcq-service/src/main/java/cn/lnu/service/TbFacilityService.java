@@ -16,6 +16,7 @@ public interface TbFacilityService {
 
     public List<TbFacility> selectTbFacilityByPage(int startPos,int pageSize);
 
+    public List<TbFacility> selectHandlers();
 
 
 }

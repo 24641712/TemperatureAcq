@@ -19,6 +19,9 @@ public interface TbFacilityDao {
             @Param(value = "startPos") Integer startPos,
             @Param(value = "pageSize") Integer pageSize);
 
+    //查询设备
+    public List<TbFacility> selectHandlers();
+
 
 
 

@@ -30,5 +30,9 @@ public class TbFacilitiesImpl implements TbFacilityService {
         return tbFacilityDao.selectTbFacilityByPage(startPos,pageSize);
     }
 
+    public List<TbFacility> selectHandlers() {
+        return tbFacilityDao.selectHandlers();
+    }
+
 
 }

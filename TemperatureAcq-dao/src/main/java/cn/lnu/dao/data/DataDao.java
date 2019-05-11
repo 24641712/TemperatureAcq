@@ -15,11 +15,16 @@ import java.util.List;
 public interface DataDao {
     public List<Temperature> selectTemp();
 
-    public int count();
+    public int count(@Param(value = "inpstart") String inpstart,
+                     @Param(value = "inpend") String inpend,
+                     @Param(value = "ip") String ip);
 
     public List<Temperature> selectTempByPage(
             @Param(value = "startPos")Integer startPos,
-            @Param(value="pageSize")Integer pageSize);
+            @Param(value="pageSize")Integer pageSize,
+            @Param(value = "inpstart") String inpstart,
+            @Param(value = "inpend") String inpend,
+            @Param(value = "ip") String ip);
 
     //查询历史数据
     public List<HistoricalData> selectHistoricalDataByPage(

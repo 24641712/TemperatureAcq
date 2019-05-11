@@ -60,8 +60,8 @@
 </section>
 
 <!--Global Javascript -->
-<script src="${ctx}/static/js/jquery.min.js"></script>
-<script src="${ctx}/static/js/tether.min.js"></script>
+<script src="${ctx}/static/js/js/jquery.min.js"></script>
+<script src="${ctx}/static/js/js/tether.min.js"></script>
 <script src="${ctx}/static/js/bootstrap.min.js"></script>
 <script type="text/javascript">
     //实现用户登录验证功能
@@ -91,6 +91,13 @@
                 }
             });
         });
+    });
+</script>
+<script type="text/javascript">
+    $("body").keydown(function () {
+        if(event.keyCode == "13"){
+            $("#submit").click();
+        }
     });
 </script>
 </body>

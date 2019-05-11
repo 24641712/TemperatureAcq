@@ -1,11 +1,13 @@
 package cn.lnu.controller.data;
 
+import cn.lnu.entity.TbFacility;
 import cn.lnu.service.TbFacilityService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @Author
@@ -35,6 +37,8 @@ public class TbFacilityController {
     @RequestMapping("chart")
     public ModelAndView getChart(){
         ModelAndView model = new ModelAndView();
+        List<TbFacility> tbFacilities = tbFacilityService.selectHandlers();
+        model.addObject("handlers",tbFacilities);
         model.setViewName("/data/chart");
         return model;
     }

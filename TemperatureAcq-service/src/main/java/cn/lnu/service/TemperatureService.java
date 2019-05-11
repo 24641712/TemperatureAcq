@@ -14,10 +14,10 @@ public interface TemperatureService {
 
     public List<Temperature> selectTemp();
 
-    public int count();
+    public int count(String inpstart,String inpend,String ip);
 
     //按条件查询温度
-    public List<Temperature> selectTempByPage(int startPos,int pageSize);
+    public List<Temperature> selectTempByPage(int startPos,int pageSize,String inpstart,String inpend,String ip);
 
     //按时间查找数据
     public List<Temperature> selectHistoricalDataByTime(String start,String end);

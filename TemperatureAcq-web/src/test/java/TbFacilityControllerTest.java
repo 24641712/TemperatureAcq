@@ -26,12 +26,22 @@ public class TbFacilityControllerTest {
     @Test
     public void getSelectTbFacilityByPage(){
         int totalCount = tbFacilityService.count();
-        Page page = new Page(totalCount,1);
-        List<TbFacility> tbFacilities = tbFacilityService.selectTbFacilityByPage(page.getStartPos(),page.getPageSize());
-        for(TbFacility tbFacility:tbFacilities){
-            System.out.println(tbFacility.toString());
-        }
+//        Page page = new Page(totalCount,1);
+//        List<TbFacility> tbFacilities = tbFacilityService.selectTbFacilityByPage(page.getStartPos(),page.getPageSize());
+//        for(TbFacility tbFacility:tbFacilities){
+//            System.out.println(tbFacility.toString());
+//        }
         System.out.println(totalCount);
+
+    }
+
+    @Test
+    public void getSelectTbFacility(){
+        List<TbFacility> handlers = tbFacilityService.selectHandlers();
+        for(TbFacility tbFacility:handlers){
+            System.out.println(tbFacility.getHandler()+","+tbFacility.getIp());
+        }
+
 
     }
 
