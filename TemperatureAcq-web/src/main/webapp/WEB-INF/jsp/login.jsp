@@ -44,10 +44,10 @@
                             <label for="exampleInputEmail1">Password</label>
                             <input type="password" class="form-control" id="password" placeholder="密码">
                         </div>
-                        <button class="btn btn-general btn-blue" role="button" id="submit">
-                            <i fa fa-right-arrow></i>
-                           登录
-                        </button>
+                        <input class="btn btn-general btn-blue" type="button" id="submit" value="登录"/>
+                            <%--<i fa fa-right-arrow></i>--%>
+                           <%--登录--%>
+                        <%--</input>--%>
                         <button class="btn btn-general btn-blue" role="button">
                             <i fa fa-right-arrow></i>
                             注册
@@ -62,13 +62,16 @@
 <!--Global Javascript -->
 <script src="${ctx}/static/js/js/jquery.min.js"></script>
 <script src="${ctx}/static/js/js/tether.min.js"></script>
-<script src="${ctx}/static/js/bootstrap.min.js"></script>
+<script src="${ctx}/static/js/popper/popper.min.js"></script>
+<script src="${ctx}/static/js/js/bootstrap.min.js"></script>
 <script type="text/javascript">
     //实现用户登录验证功能
     $(function () {
         $("#submit").click(function () {
             username=$("#username").val();
             password=$("#password").val();
+            window.location.href = "${ctx}/m_user/index.do";
+
             var regInfo = {"username":username,"password":password};
             var successurl="${ctx}/m_user/index.do";
             $.ajax({
@@ -79,9 +82,12 @@
                 dataType:"json",
                 success:function(data,xstatus,xhr){
                     if(data.code==1){
+                        window.location.href = "${ctx}/m_user/index.do";
+                        <%--window.open("${ctx}/m_user/index.do");--%>
+                        // window.close();
+                        // tiao()
                         alert("登录成功");
-                        window.open("${ctx}/m_user/index.do");
-                        window.close();
+                        return false;
                     }else if(data.code==2){
                         alert("账号或密码错误");
                     }
@@ -90,6 +96,7 @@
                     alert("请求异常");
                 }
             });
+            window.location.href = "${ctx}/m_user/index.do";
         });
     });
 </script>
