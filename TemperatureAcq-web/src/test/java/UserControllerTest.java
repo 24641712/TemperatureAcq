@@ -47,12 +47,14 @@ public class UserControllerTest {
 
     @Test
     public void getCount(){
-        int totalCount = userService.count();
         int pageNow = 1;
+        String yhm = "用户9";
+        int totalCount = userService.count(yhm);
+        System.out.println("totalCount:"+totalCount);
         Page page = new Page(totalCount,pageNow);
-        List<TbUser> tbUsers = userService.selectTbUserByPage(page.getStartPos(),page.getPageSize());
+        List<TbUser> tbUsers = userService.selectTbUserByPage(page.getStartPos(),page.getPageSize(),yhm);
         for(TbUser tbUser:tbUsers){
-            System.out.println(tbUser.getCreated());
+            System.out.println(tbUser.toString());
         }
     }
 

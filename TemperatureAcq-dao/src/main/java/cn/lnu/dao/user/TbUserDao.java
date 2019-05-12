@@ -14,10 +14,11 @@ import java.util.List;
 public interface   TbUserDao {
     public List<TbUser> findAllTbUsers();
 
-    public int count();
+    public int count(@Param(value="yhm")String yhm);
 
     public List<TbUser> selectTbUsersByPage(@Param(value="startPos")Integer startPos,
-                                            @Param(value="pageSize")Integer pageSize);
+                                            @Param(value="pageSize")Integer pageSize,
+                                            @Param(value="yhm")String yhm);
 
     public int addTbUser(InsertTbUser tbUser);
 

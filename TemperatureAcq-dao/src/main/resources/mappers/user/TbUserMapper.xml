@@ -20,13 +20,23 @@
   <!--查询数据总ti条数-->
   <select id="count" resultType="Integer">
     select count(*) as count1
-    from tb_user;
+    from tb_user
+    <where>
+      <if test="yhm!='' and yhm!=null" >
+       username = #{yhm}
+      </if>
+    </where>
   </select>
 
   <!--分页查询数据-->
   <select id="selectTbUsersByPage" resultMap="TbUserResult">
     select *
     from tb_user
+    <where>
+      <if test="yhm!='' and yhm!=null">
+        username = #{yhm}
+      </if>
+    </where>
     limit #{startPos},#{pageSize};
   </select>
 

@@ -30,3 +30,51 @@ $("#email").blur(function () {
         return;
     }
 })
+
+function pageSearch() {
+    var pageNow = $("#pageNow").val();
+    var yhm = $("#searchyhm").val();
+    var info = {"yhm":yhm,"pageNow":pageNow};
+    $.ajax({
+        async:true,//异步加载
+        timeout:1000,
+        data:info,
+        type:"POST",
+        url:"/user/ajax_tbUser.do",
+        dataType:'json',
+        success:function (data) {
+            var tbUsers = data.tbUsers;
+            var page = data.page;
+            var table;
+            if(page.totalPageCount>0){
+                $.each(tbUsers,function () {
+                    table += " <tr>\n" +
+                        " <th scope='row'>"+this.Uid+"</th>\n" +
+                        " <td>"+this.username+"</td>\n" +
+                        " <td>"+this.email+"</td>\n" +
+                        " <td>"+this.created+"</td>\n" +
+                        " <td><a href='#'>编辑</a></td>\n"+
+                        " </tr>";
+                })
+                $("#tbody").html(table);
+                $("#totalpage").html(page.totalPageCount);
+                $("#currentpage").html(page.pageNow);
+                $('#totalPageCount').val(page.totalPageCount);
+                $('#pageNow').val(page.pageNow);
+                $('#searchyhm').val(yhm);
+            }else{
+                alert("没有符合条件的数据");
+                $("#tbody").empty();
+                $("#totalpage").html(0);
+                $("#currentpage").html(0);
+                $('#totalPageCount').val(0);
+                $('#pageNow').val(0);
+            }
+        },
+        error:function (data) {
+            alert("出错了" +data);
+        }
+    });
+
+}
+

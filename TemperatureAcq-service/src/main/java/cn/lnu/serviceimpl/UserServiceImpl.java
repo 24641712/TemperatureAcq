@@ -22,12 +22,12 @@ public class UserServiceImpl implements UserService {
         return tbUserDao.findAllTbUsers();
     }
 
-    public int count() {
-        return tbUserDao.count();
+    public int count(String yhm) {
+        return tbUserDao.count(yhm);
     }
 
-    public List<TbUser> selectTbUserByPage(int startPos, int pageSize) {
-        return tbUserDao.selectTbUsersByPage(startPos,pageSize);
+    public List<TbUser> selectTbUserByPage(int startPos, int pageSize,String yhm) {
+        return tbUserDao.selectTbUsersByPage(startPos,pageSize,yhm);
     }
 
     public int addTbUser(InsertTbUser tbUser) {

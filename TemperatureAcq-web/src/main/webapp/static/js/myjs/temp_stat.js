@@ -132,7 +132,7 @@ function pageSearch() {
         error:function (data) {
             alert("出错了" +data);
         }
-    })
+    });
 }
 
 

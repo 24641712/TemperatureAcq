@@ -7,8 +7,10 @@ import cn.lnu.service.TbFacilityService;
 import cn.lnu.service.UserService;
 import cn.lnu.util.Page;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -17,7 +19,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 用户控制层
@@ -66,26 +70,50 @@ public class TbUserController {
     public ModelAndView getAddTbUsers(HttpServletRequest request){
         ModelAndView model = new ModelAndView();
         String pageNow = request.getParameter("pageNow");
-        int totalcount = userService.count();
+        int totalcount = userService.count("");
         Page page = null;
         if(pageNow!=null){
             page = new Page(totalcount,Integer.parseInt(pageNow));
             List<TbUser> tbUsers = userService.selectTbUserByPage(
-                    page.getStartPos(),page.getPageSize());
+                    page.getStartPos(),page.getPageSize(),"");
         }else{
             page = new Page(totalcount,1);
             List<TbUser> tbUsers = userService.selectTbUserByPage(
-                    page.getStartPos(),page.getPageSize());
+                    page.getStartPos(),page.getPageSize(),"");
         }
 
 
         List<TbUser> tbUsers = userService.selectTbUserByPage(
-                page.getStartPos(),page.getPageSize());
+                page.getStartPos(),page.getPageSize(),"");
         model.addObject("tbUsers",tbUsers);
         model.addObject("page",page);
         model.setViewName("/person/TbUsers");
         return model;
     }
+
+    @ResponseBody
+    @RequestMapping("ajax_tbUser")
+    public Map<String,Object> getAjax_TbUser(HttpServletRequest request){
+        String yhm = request.getParameter("yhm");
+        String pageNow = request.getParameter("pageNow");
+        int totalcount = userService.count(yhm);
+        System.out.println("yhm:"+yhm+", pageNow:"+pageNow);
+        Page page = null;
+        if(pageNow!=null){
+            page = new Page(totalcount,Integer.parseInt(pageNow));
+        }else{
+            page = new Page(totalcount,1);
+        }
+        System.out.println("pageNow");
+        List<TbUser> tbUsers = userService.selectTbUserByPage(
+                page.getStartPos(),page.getPageSize(),yhm);
+        Map<String,Object> map = new HashMap<>();
+        map.put("tbUsers",tbUsers);
+        map.put("page",page);
+        return map;
+    }
+
+
 
     @RequestMapping("/Facilities")
     public ModelAndView getFacilities(HttpServletRequest request){

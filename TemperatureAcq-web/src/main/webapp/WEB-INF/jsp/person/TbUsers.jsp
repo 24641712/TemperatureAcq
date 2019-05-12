@@ -66,10 +66,11 @@
     ======================================================-->
     <div align="left" style="margin-left: 30px;margin-top: -10px;height: 70px;width: auto;">
         <div style="float: left">
-            <input type="text" class="form-control" placeholder="用户名" style="width:280px;">
+            <input type="text" class="form-control" placeholder="用户名" id="search_yhm"  style="width:280px;">
+            <input type="hidden" id="searchyhm" value=""/>
         </div>
         <div>
-            <button type="button" class="btn btn-info">查询</button>
+            <button type="button" class="btn btn-info" onclick="searchResult()">查询</button>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal1">添加新用户</button>
         </div>
@@ -90,49 +91,21 @@
             </tr>
             </thead>
 
-            <tbody>
-            <c:forEach items="${tbUsers}" var="tbUser">
-            <tr>
-                <th scope="row">${tbUser.uid}</th>
-                <td>${tbUser.username}</td>
-                <td>${tbUser.email}</td>
-                <td>${tbUser.created}</td>
-                <td><a href="#">编辑</a></td>
-            </tr>
-            </c:forEach>
+            <tbody id="tbody">
             </tbody>
         </table>
         <div align="center">
-            <font size="2">共${page.totalPageCount}页</font>
-            <font size="2">第${page.pageNow}页</font>
-            <a href="${ctx}/user/TbUsers.do?pageNow=1">首页</a>
-            <c:choose>
-                <c:when test="${page.pageNow-1 > 0}">
-                    <a href="${ctx}/user/TbUsers.do?pageNow=${page.pageNow-1}">上一页</a>
-                </c:when>
-                <c:when test="${page.pageNow-1 <= 0}">
-                    <a href="${ctx}/user/TbUsers.do?pageNow=1">上一页</a>
-                </c:when>
-            </c:choose>
-            <c:choose>
-                <c:when test="${page.totalPageCount == 0}">
-                    <a href="${ctx}/user/TbUsers.do?pageNow=${page.pageNow}">下一页</a>
-                </c:when>
-                <c:when test="${page.pageNow+1 < page.totalPageCount}">
-                    <a href="${ctx}/user/TbUsers.do?pageNow=${page.pageNow+1}">下一页</a>
-                </c:when>
-                <c:when test="${page.pageNow+1 >= page.totalPageCount}">
-                    <a href="${ctx}/user/TbUsers.do?pageNow=${page.totalPageCount}">下一页</a>
-                </c:when>
-            </c:choose>
-            <c:choose>
-                <c:when test="${page.totalPageCount==0}">
-                    <a href="${ctx}/user/TbUsers.do?pageNow=${page.pageNow}">尾页</a>
-                </c:when>
-                <c:otherwise>
-                    <a href="${ctx}/user/TbUsers.do?pageNow=${page.totalPageCount}">尾页</a>
-                </c:otherwise>
-            </c:choose>
+            <font size="2">共<span id="totalpage"></span>页</font>
+            <font size="2">第<span id="currentpage"></span>页</font>
+            <a href="#" onclick="pageAjaxFirst()">首页</a>
+
+            <a href="#" onclick="pageAjaxPrev()">上一页</a>
+
+            <a href="#" onclick="pageAjaxNext()">下一页</a>
+
+            <a href="#" onclick="pageAjaxEnd()">尾页</a>
+            <input type="hidden" id="pageNow" name="pageNow"/>
+            <input type="hidden" id="totalPageCount" name="totalPageCount"/>
         </div>
     </div>
 </div>
@@ -153,6 +126,7 @@
 <!--Core Javascript -->
 <script type="text/javascript">
    window.onload = function () {
+       searchResult();
        var color = ['table-warning','table-success','table-danger','table-info']
        var rows=document.getElementById("table1").rows;
        var index = 0;
@@ -165,12 +139,107 @@
            }
        }
    }
+
    $('#myModal1').on('shown.bs.modal', function () {
        $("#yhm").val("");$("#email").val("");
        $("#nameDiv2").empty();
        $('#myInput').focus();
    })
+
+   function searchResult(){
+       var yhm = $("#search_yhm").val();
+       var info = {"yhm":yhm,"pageNow":1};
+       $.ajax({
+           async:true,//异步加载
+           timeout:1000,
+           data:info,
+           type:"POST",
+           url:"/user/ajax_tbUser.do",
+           dataType:'json',
+           success:function (data) {
+               var tbUsers = data.tbUsers;
+               var page = data.page;
+               var table;
+               if(page.totalPageCount>0){
+                   $.each(tbUsers,function () {
+                       table += " <tr>\n" +
+                           " <th scope='row'>"+this.Uid+"</th>\n" +
+                           " <td>"+this.username+"</td>\n" +
+                           " <td>"+this.email+"</td>\n" +
+                           " <td>"+this.created+"</td>\n" +
+                           " <td><a href='#'>编辑</a></td>\n"+
+                           " </tr>";
+                   })
+                   $("#tbody").html(table);
+                   $("#totalpage").html(page.totalPageCount);
+                   $("#currentpage").html(page.pageNow);
+                   $('#totalPageCount').val(page.totalPageCount);
+                   $('#pageNow').val(page.pageNow);
+                   $('#searchyhm').val(yhm);
+               }else{
+                   alert("没有符合条件的数据");
+                   $("#tbody").empty();
+                   $("#totalpage").html(0);
+                   $("#currentpage").html(0);
+                   $('#totalPageCount').val(0);
+                   $('#pageNow').val(0);
+                   $('#searchyhm').val(yhm);
+               }
+           },
+           error:function (data) {
+               alert("出错了" +data);
+           }
+       });
+   }
 </script>
+<script type="text/javascript">
+    //首页
+    function pageAjaxFirst() {
+        $('#pageNow').val(1);
+        pageSearch();
+    }
+
+    //上一页
+    function pageAjaxPrev() {
+        var pageNow = parseInt($('#pageNow').val());
+        if (pageNow-1 > 0) {
+            $('#pageNow').val(pageNow -1);
+        }else{
+            $('#pageNow').val(1);
+        }
+        pageSearch();
+    }
+
+    //下一页
+    function pageAjaxNext(){
+        var totalPageCount = parseInt($('#totalPageCount').val());
+        var pageNow = parseInt($('#pageNow').val());
+        if(totalPageCount==0){
+            $('#pageNow').val(pageNow);
+
+        }else if(pageNow+1<totalPageCount){
+            $('#pageNow').val(pageNow+1);
+
+        }else {
+            $('#pageNow').val(totalPageCount);
+
+        }
+        pageSearch();
+    }
+
+    //尾页
+    function pageAjaxEnd(){
+        var totalPageCount = parseInt($('#totalPageCount').val());
+        var pageNow = parseInt($('#pageNow').val());
+        if(totalPageCount==0){
+            $('#pageNow').val(pageNow);
+        }else{
+            $('#pageNow').val(totalPageCount);
+        }
+        pageSearch();
+    }
+</script>
+
 </body>
 
 </html>
