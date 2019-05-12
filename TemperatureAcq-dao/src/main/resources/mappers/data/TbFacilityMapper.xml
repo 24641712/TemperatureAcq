@@ -21,13 +21,23 @@
   <!--查询设备总数-->
   <select id="count" resultType="Integer">
     select count(*) as count1
-    from tb_facility;
+    from tb_facility
+    <where>
+      <if test="handler!='' and handler!=null">
+         handler = #{handler}
+      </if>
+    </where>
   </select>
 
   <!--按条件查询指定数据-->
   <select id="selectTbFacilityByPage" resultMap="TbFacilityResult">
     select *
     from tb_facility
+    <where>
+      <if test="handler!='' and handler!=null">
+         handler = #{handler}
+      </if>
+    </where>
     limit #{startPos},#{pageSize}
   </select>
 

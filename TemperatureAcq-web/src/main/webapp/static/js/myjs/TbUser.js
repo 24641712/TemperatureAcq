@@ -49,7 +49,7 @@ function pageSearch() {
             if(page.totalPageCount>0){
                 $.each(tbUsers,function () {
                     table += " <tr>\n" +
-                        " <th scope='row'>"+this.Uid+"</th>\n" +
+                        " <th scope='row'>"+this.uid+"</th>\n" +
                         " <td>"+this.username+"</td>\n" +
                         " <td>"+this.email+"</td>\n" +
                         " <td>"+this.created+"</td>\n" +
@@ -63,16 +63,15 @@ function pageSearch() {
                 $('#pageNow').val(page.pageNow);
                 $('#searchyhm').val(yhm);
             }else{
-                alert("没有符合条件的数据");
                 $("#tbody").empty();
                 $("#totalpage").html(0);
                 $("#currentpage").html(0);
                 $('#totalPageCount').val(0);
-                $('#pageNow').val(0);
+                $('#pageNow').val(1);
             }
         },
         error:function (data) {
-            alert("出错了" +data);
+            alert("数据获取失败");
         }
     });
 

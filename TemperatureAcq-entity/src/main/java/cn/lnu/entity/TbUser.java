@@ -9,7 +9,7 @@ import java.util.Date;
  * @Date 2019/4/24
  */
 public class TbUser {
-    private Long Uid;
+    private Long uid;
 
     private String username;
 
@@ -20,11 +20,11 @@ public class TbUser {
     public TbUser() { }
 
     public Long getUid() {
-        return Uid;
+        return uid;
     }
 
     public void setUid(Long uid) {
-        Uid = uid;
+        this.uid = uid;
     }
 
     public String getUsername() {
@@ -55,7 +55,7 @@ public class TbUser {
     @Override
     public String toString() {
         return "TbUser{" +
-                "Uid=" + Uid +
+                "uid=" + uid +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
                 ", created=" + created +

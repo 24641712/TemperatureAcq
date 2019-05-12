@@ -23,12 +23,12 @@ public class TbFacilitiesImpl implements TbFacilityService {
         return tbFacilityDao.findAllTbFacilities();
     }
 
-    public int count() {
-        return tbFacilityDao.count();
+    public int count(String handler) {
+        return tbFacilityDao.count(handler);
     }
 
-    public List<TbFacility> selectTbFacilityByPage(int startPos,int pageSize) {
-        return tbFacilityDao.selectTbFacilityByPage(startPos,pageSize);
+    public List<TbFacility> selectTbFacilityByPage(int startPos,int pageSize,String handler) {
+        return tbFacilityDao.selectTbFacilityByPage(startPos,pageSize,handler);
     }
 
     public List<TbFacility> selectHandlers() {

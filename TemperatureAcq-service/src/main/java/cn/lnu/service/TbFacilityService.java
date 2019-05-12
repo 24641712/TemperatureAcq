@@ -13,9 +13,9 @@ public interface TbFacilityService {
 
     public List<TbFacility> findAllFacilities();
 
-    public int count();
+    public int count(String handler);
 
-    public List<TbFacility> selectTbFacilityByPage(int startPos,int pageSize);
+    public List<TbFacility> selectTbFacilityByPage(int startPos,int pageSize,String handler);
 
     public List<TbFacility> selectHandlers();
 

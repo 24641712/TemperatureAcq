@@ -5,7 +5,7 @@
 <mapper namespace="cn.lnu.dao.user.TbUserDao">
 
   <resultMap id="TbUserResult" type="TbUser">
-    <result property="Uid" column="uid"/>
+    <result property="uid" column="uid"/>
     <result property="username" column="username"/>
     <result property="email" column="email"/>
     <result property="created" column="created"/>
@@ -42,7 +42,7 @@
 
   <!--添加用户-->
   <insert id="addTbUser" parameterType="InsertTbUser" keyProperty="uid" useGeneratedKeys="true">
-    insert into tb_user values(#{Uid},#{username},#{email},#{insertCreated});
+    insert into tb_user values(#{uid},#{username},#{email},#{insertCreated});
   </insert>
 
   <!--&lt;!&ndash;修改用户信息&ndash;&gt;-->

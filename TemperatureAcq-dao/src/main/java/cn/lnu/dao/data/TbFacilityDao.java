@@ -14,11 +14,12 @@ import java.util.List;
 public interface TbFacilityDao {
     public List<TbFacility> findAllTbFacilities();
 
-    public int count();
+    public int count(@Param(value = "handler") String handler);
 
     public List<TbFacility> selectTbFacilityByPage(
             @Param(value = "startPos") Integer startPos,
-            @Param(value = "pageSize") Integer pageSize);
+            @Param(value = "pageSize") Integer pageSize,
+            @Param(value="handler") String handler);
 
     //查询设备
     public List<TbFacility> selectHandlers();

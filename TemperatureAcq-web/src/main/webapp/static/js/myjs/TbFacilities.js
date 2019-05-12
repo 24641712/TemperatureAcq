@@ -94,3 +94,4 @@ $("#max").blur(function () {
         return;
     }
 });
+
