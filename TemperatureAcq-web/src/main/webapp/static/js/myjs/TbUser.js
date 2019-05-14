@@ -9,13 +9,14 @@ function addTbUser() {
         $("#nameDiv2").html("邮箱不能为空!");
         return;
     }else if(reg.test($("#email").val())){
-        $.post("/user/addTbUser.do",
+        $.post("addTbUser.do",
             {"yhm": yhm, "email": email},
             function (data) {
                 alert(data);
                 $("#myModal1").modal("hide");
                 $("#yhm").val("");
                 $("#email").val("");
+                pageSearch();
             },
             "text"
         );
@@ -40,7 +41,7 @@ function pageSearch() {
         timeout:1000,
         data:info,
         type:"POST",
-        url:"/user/ajax_tbUser.do",
+        url:"ajax_tbUser.do",
         dataType:'json',
         success:function (data) {
             var tbUsers = data.tbUsers;
@@ -71,9 +72,8 @@ function pageSearch() {
             }
         },
         error:function (data) {
-            alert("数据获取失败");
+            alert("数据获取失败1");
         }
     });
-
 }
 

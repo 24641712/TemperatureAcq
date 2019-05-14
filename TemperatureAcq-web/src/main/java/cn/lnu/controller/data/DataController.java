@@ -40,6 +40,8 @@ public class DataController {
     @RequestMapping("temp")
     public ModelAndView getTemp(HttpServletRequest request) {
         ModelAndView model = new ModelAndView();
+        List<TbFacility> handlers = tbFacilityService.selectHandlers();
+        model.addObject("handlers",handlers);
         model.setViewName("/data/temp_stat");
         return model;
     }

@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
@@ -37,12 +38,19 @@ public class TbUserController {
     @Resource
     private TbFacilityService tbFacilityService;
 
-    @RequestMapping("/logout")
-    public ModelAndView getLogout(){
-        ModelAndView model =  new ModelAndView();
-        model.setViewName("login");
-        return model;
-    }
+//    @RequestMapping("/logout")
+//    public ModelAndView getLogout(HttpServletRequest request){
+//        ModelAndView model =  new ModelAndView();
+//        HttpSession session = request.getSession();
+//        session.removeAttribute("username");
+//        if(session.getAttribute("username")==null){
+//            System.out.println("退出成功");
+//        }else {
+//            System.out.println("退出失败");
+//        }
+//        model.setViewName("login");
+//        return model;
+//    }
 
     @RequestMapping(value = "addTbUser",method = RequestMethod.POST)
     public void getAddTbUser(HttpServletResponse response, HttpServletRequest request)throws IOException {

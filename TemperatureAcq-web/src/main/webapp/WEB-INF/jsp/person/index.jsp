@@ -188,7 +188,7 @@
                             <hr>
                         </li>
                         <li>
-                            <a rel="nofollow" href="${ctx}/user/logout.do" class="dropdown-item">
+                            <a rel="nofollow" href="${ctx}/m_user/logout.do" class="dropdown-item">
                                 <div class="notification">
                                     <div class="notification-content">
                                         <i class="fa fa-power-off"></i>

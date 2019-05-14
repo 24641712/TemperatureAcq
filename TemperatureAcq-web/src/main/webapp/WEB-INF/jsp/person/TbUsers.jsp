@@ -154,7 +154,7 @@
            timeout:1000,
            data:info,
            type:"POST",
-           url:"/user/ajax_tbUser.do",
+           url:"ajax_tbUser.do",
            dataType:'json',
            success:function (data) {
                var tbUsers = data.tbUsers;
@@ -187,7 +187,7 @@
                }
            },
            error:function (data) {
-               alert("数据获取失败");
+               alert("数据获取失败2");
            }
        });
    }
@@ -239,7 +239,6 @@
         pageSearch();
     }
 </script>
-
 </body>
 
 </html>

@@ -287,10 +287,10 @@
 <script src="${ctx}/static/js/js/jquery.min.js"></script>
 <script src="${ctx}/static/js/popper/popper.min.js"></script>
 <script src="${ctx}/static/js/js/tether.min.js"></script>
-<script src="${ctx}/static/js/bootstrap.min.js"></script>
+<script src="${ctx}/static/js/js/bootstrap.min.js"></script>
 <script src="${ctx}/static/js/js/jquery.cookie.js"></script>
 <script src="${ctx}/static/js/js/jquery.validate.min.js"></script>
-<script src="${ctx}/static/js/chart.min.js"></script>
+<script src="${ctx}/static/js/js/chart.min.js"></script>
 <script src="${ctx}/static/js/js/front.js"></script>
 
 <!--Core Javascript -->

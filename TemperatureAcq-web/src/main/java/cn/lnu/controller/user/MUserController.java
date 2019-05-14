@@ -30,8 +30,30 @@ public class MUserController {
     @Resource
     private MUserService mUserService;
 
-    @RequestMapping(value = "login",method = RequestMethod.POST)
+    @RequestMapping("/logout")
+    public ModelAndView getLogout(HttpServletRequest request){
+        ModelAndView model =  new ModelAndView();
+        HttpSession session = request.getSession();
+        session.removeAttribute("username");
+        if(session.getAttribute("username")==null){
+            System.out.println("退出成功");
+        }else {
+            System.out.println("退出失败");
+        }
+        model.setViewName("login");
+        return model;
+    }
+
+    @RequestMapping("/login")
+    public ModelAndView getLogin(HttpServletRequest request){
+        ModelAndView model =  new ModelAndView();
+        model.setViewName("login");
+        return model;
+    }
+
+
     @ResponseBody
+    @RequestMapping(value = "login",method = RequestMethod.POST)
     public Map getLogin(String username,String password,HttpServletResponse response,
                          HttpServletRequest request) throws IOException {
       response.setContentType("text/html;charset=utf-8");

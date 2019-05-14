@@ -28,19 +28,17 @@ function addFatifities() {
         var length = options.length;
         options = options.substring(0,length-1);
         var info = {"handler":handler,"ip":ip,"min_temp":min,"max_temp":max,"notify":options};
-        $.post("/facility/addTbFacility.do",
+        $.post("addTbFacility.do",
             info,
             function (data) {
                 alert(data);
                 $("#myModal2").modal("hide");
                 $("#yhm").val("");
                 $("#email").val("");
+                pageSearch();
             },
             "text"
         );
-
-
-
     }
 }
 

@@ -98,7 +98,7 @@
           class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <property name="exceptionMappings">
             <props>
-                <prop key="cn.lnu.controller.interceptor.WebAuthException">redirect:/user/logout.do</prop>
+                <prop key="cn.lnu.controller.interceptor.WebAuthException">redirect:/m_user/login.do</prop>
             </props>
         </property>
     </bean>

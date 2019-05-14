@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="http://www.jemui.com/demo/css/jeui.css"  media="all">
     <link rel="stylesheet" href="http://www.jemui.com/demo/css/skin/jedate.css"  media="all">
     <link rel="stylesheet" href="${ctx}/static/css/mycss/combo.select.css"  media="all">
-    <script src="${ctx}/static/js/bootstrap.min.js"></script>
+    <script src="${ctx}/static/js/js/bootstrap.min.js"></script>
     <script src="http://www.jemui.com/demo/js/modules/jeui.js"></script>
     <!-- Core stylesheets -->
 </head>
@@ -137,10 +137,10 @@
 <script src="${ctx}/static/js/myjs/jquery.combo.select.js"></script>
 <script src="${ctx}/static/js/popper/popper.min.js"></script>
 <script src="${ctx}/static/js/js/tether.min.js"></script>
-<script src="${ctx}/static/js/bootstrap.min.js"></script>
+<script src="${ctx}/static/js/js/bootstrap.min.js"></script>
 <script src="${ctx}/static/js/js/jquery.cookie.js"></script>
 <script src="${ctx}/static/js/js/jquery.validate.min.js"></script>
-<script src="${ctx}/static/js/chart.min.js"></script>
+<script src="${ctx}/static/js/js/chart.min.js"></script>
 <script src="${ctx}/static/js/js/front.js"></script>
 <script src="${ctx}/static/js/myjs/temp_stat.js"></script>
 

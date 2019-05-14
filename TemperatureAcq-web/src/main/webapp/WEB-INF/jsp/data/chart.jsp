@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="http://www.jemui.com/demo/css/skin/jedate.css"  media="all">
     <link rel="stylesheet" href="${ctx}/static/css/mycss/bootstrap-theme.min.css"  media="all">
     <link rel="stylesheet" href="${ctx}/static/css/mycss/combo.select.css"  media="all">
-    <script src="${ctx}/static/js/bootstrap.min.js"></script>
+    <script src="${ctx}/static/js/js/bootstrap.min.js"></script>
     <script src="http://www.jemui.com/demo/js/modules/jeui.js"></script>
 
 </head>
@@ -176,11 +176,11 @@
 <script src="${ctx}/static/js/popper/popper.min.js"></script>
 <script src="${ctx}/static/js/js/tether.min.js"></script>
 <script src="${ctx}/static/js/echarts-all.js"></script>
-<script src="${ctx}/static/js/chart.min.js"></script>
+<script src="${ctx}/static/js/js/chart.min.js"></script>
 <script src="${ctx}/static/js/js/front.js"></script>
 <script src="${ctx}/static/js/myjs/chart.js"></script>
 <!--Core Javascript -->
-<script src="${ctx}/static/js/chart-page.js"></script>
+<script src="${ctx}/static/js/js/chart-page.js"></script>
 <script>
         $(function() {
             $('select').comboSelect();

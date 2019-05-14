@@ -18,7 +18,7 @@ function searchResult() {
            timeout:1000,
            data:info,
            type:"POST",
-           url:"/data/ajax_temp.do",
+           url:"ajax_temp.do",
            dataType:'json',
            success:function (data) {
                var temps = data.temps;
@@ -64,7 +64,7 @@ function initTemp() {
         timeout:1000,
         data:info,
         type:"POST",
-        url:"/data/ajax_temp.do",
+        url:"ajax_temp.do",
         dataType:'json',
         success:function (data) {
             var temps = data.temps;
@@ -106,7 +106,7 @@ function pageSearch() {
         timeout:1000,
         data:info,
         type:"POST",
-        url:"/data/ajax_temp.do",
+        url:"ajax_temp.do",
         dataType:'json',
         success:function (data) {
             var temps = data.temps;

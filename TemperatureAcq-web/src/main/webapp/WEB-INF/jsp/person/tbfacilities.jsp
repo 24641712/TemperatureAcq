@@ -188,7 +188,7 @@
             timeout:1000,
             data:info,
             type:"POST",
-            url:"/user/ajax_tbFacility.do",
+            url:"ajax_tbFacility.do",
             dataType:'json',
             success:function (data) {
                 var tbFacilities = data.tbFacilities;
@@ -283,14 +283,14 @@
 <script type="text/javascript">
     function pageSearch() {
         var pageNow = $('#pageNow').val();
-        var handler = $("#search_handler").val();
+        var handler = $("#searchhandler").val();
         var info = {"handler":handler,"pageNow":pageNow};
         $.ajax({
             async:true,//异步加载
             timeout:1000,
             data:info,
             type:"POST",
-            url:"/user/ajax_tbFacility.do",
+            url:"ajax_tbFacility.do",
             dataType:'json',
             success:function (data) {
                 var tbFacilities = data.tbFacilities;
